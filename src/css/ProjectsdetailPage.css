@@ -1,3 +1,8 @@
+/* @font-face {
+  font-family: "PretendardVariable";
+  src: url("../fonts/PretendardVariable.ttf");
+} */
+
 .projectsdetail {
   display: flex;
   align-items: center;
@@ -7,12 +12,16 @@
 
 .project-title {
   color: #FFFFFF;
+  font-family: 'PretendardVariable';
+  font-weight: bold;
 }
 
 .team-title {
   color: #FFFFFF;
+  font-family: 'PretendardVariable';
 }
 
 .project-content {
   color: #FFFFFF;
+  font-family: 'PretendardVariable';
 }

@@ -1,5 +1,16 @@
+@font-face {
+  font-family: "PretendardVariable";
+  src: url(./fonts/PretendardVariable.ttf);
+}
+
+@font-face {
+  font-family: "ButlerRegular";
+  src: url(./fonts/Butler_Regular.otf);
+}
+
 body {
   background-color: #000000;
   background-repeat: repeat;
   background-size: cover;
+  color: #FFFFFF;
 }
