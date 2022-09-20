@@ -1,0 +1,18 @@
+.projectsdetail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.project-title {
+  color: #FFFFFF;
+}
+
+.team-title {
+  color: #FFFFFF;
+}
+
+.project-content {
+  color: #FFFFFF;
+}
