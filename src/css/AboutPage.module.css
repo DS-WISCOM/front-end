@@ -1,0 +1,59 @@
+.titleContainer {
+    background-color: brown;
+    height: 240px;
+}
+
+.title {
+    padding-top: 92px;
+    height: 240px;
+    font-size: 48px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.contentContainer {
+    max-width: 1800px;
+    padding: 40px 0;
+    margin: auto;
+}
+
+.aboutContainer {
+    margin: 40px;
+}
+
+.aboutTitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.aboutContent {
+    margin: 10px 60px 50px 0;
+    font-size: 20px;
+}
+
+.professorContainer{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+.professorCard {
+    width: 170px;
+    text-align: center;
+    margin: 40px;
+}
+.professorImage {
+    width: 170px;
+    height: 170px;
+    background-color: gray;
+}
+.professorName {
+    margin: 16px;
+    padding: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+.professorMajor {
+    margin: 16px 0;
+    padding: 0;
+}
