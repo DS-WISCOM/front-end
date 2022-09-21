@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/Butler_Regular.otf");
+}
+
+#titleContainer {
+  display: inline-block;
+  width: 100vw;
+}
+
+#title {
+  margin-top: 530px;
+  margin-left: 48px;
+  color: #fff;
+  text-align: left;
+  font-family: 'Butler', sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  letter-spacing: 5px;
+}
+
+#title p {
+  /*background: -webkit-linear-gradient(white, #9d9d9d);*/
+  -webkit-background-clip: text;
+  /*-webkit-text-fill-color: transparent;*/
+  color: white;
+  margin: 0;
+}
+
+#posterText {
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+
+#posterText p {
+  position: relative;
+  /*left: 50%;*/
+  margin: 0 auto;
+}
+
+#poster {
+  float: right;
+  /*margin-right: 80px;*/
+  width: 40%;
+  min-width: 400px;
+  /*margin-top: 95px;*/
+}
+
+#poster img {
+  margin: 0 auto;
+}
+
+#contentContainer {
+  clear: both;
+  overflow: hidden;
+  margin-top: 200px;
+}
+
+#contentTitle {
+  font-weight: 700;
+  font-size: 32px;
+  margin-left: 100px;
+}
+
+#contentRow {
+  width: 100%;
+  min-height: 100%;
+  margin-top: 100px;
+  margin-left: 100px;
+  display: flex;
+}
+
+.text {
+  width: 25%;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.person {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+@media all and (max-width: 1000px) {
+  #poster img {
+    margin-top: 100px;
+  }
+  #poster, #posterText {
+    float: none;
+    margin: 0 auto;
+  }
+  #posterText {
+    width: 100%;
+  }
+}
+@media all and (max-width: 768px) {
+  #title {
+    text-align: center;
+    margin: 0 auto;
+  }
+  #poster {
+    float: none;
+    margin: 0 auto;
+  }
+
+}
