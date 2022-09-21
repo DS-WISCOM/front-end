@@ -1,0 +1,72 @@
+@font-face {
+  font-family: "Butler";
+  src: url("../fonts/Butler_Regular.otf");
+}
+
+#title {
+  margin-top: 530px;
+  margin-left: 48px;
+  color: #fff;
+  text-align: left;
+  font-family: 'Butler', sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  letter-spacing: 5px;
+}
+
+#title p {
+  background: -webkit-linear-gradient(white, #9d9d9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*color: white;*/
+  margin: 0;
+}
+
+#posterText {
+  float: left;
+  text-align: center;
+  width: 60%;
+}
+
+#posterText p {
+  position: relative;
+  /*left: 50%;*/
+  margin: 0 auto;
+}
+
+#poster {
+  float: right;
+  margin-right: 80px;
+  width: 40%;
+  min-width: 400px;
+  /*margin-top: 95px;*/
+}
+
+#poster img {
+  margin: 0 auto;
+
+}
+
+@media all and (max-width: 1000px) {
+  #poster img {
+    margin-top: 100px;
+  }
+  #poster, #posterText {
+    float: none;
+    margin: 0 auto;
+  }
+  #posterText {
+    width: 100%;
+  }
+}
+@media all and (max-width: 768px) {
+  #title {
+    text-align: center;
+    margin: 0 auto;
+  }
+  #poster {
+    float: none;
+    margin: 0 auto;
+  }
+
+}
