@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "PretendardSemiBold";
+  src: url("../fonts/Pretendard-SemiBold.ttf");
+}
+
+#projectsdetail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5%;
+}
+
+#projectTitle {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+#teamName {
+  color: #FFFFFF;
+  font-family: 'PretendardSemiBold';
+  font-size: 32px;
+}
+
+#projectContent {
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 3.5%;
+  margin-bottom: 1%;
+}
+
+#projectVideo {
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+#projectImg {
+  margin-bottom: 3%;
+}
+
+#projectDeveloper {
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 2%;
+}
+
+#developerName {
+  font-weight: bold;
+  font-size: 24px;
+  margin: 2%;
+}
+
+#videoResponsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+  margin-top: 6%;
+  margin-bottom: 10%;
+}
+
+#like {
+  width: 5%;
+  height: 5%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+
+#line {
+  border: 2px solid white;
+  width: 90%;
+  background: #FFFFFF;
+}
+
+#write {
+  width: 80%;
+  margin: 3%;
+  flex-direction: row;
+}
+
+#writerName {
+  border: 2px solid white;
+  align-content: center;
+  margin-bottom: 1%;
+}
+
+#writerNameDetail {
+  color: #FFFFFF;
+  background: #000000;
+  border: none;
+  align-self: center;
+  outline: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "PretendardVariable";
+  font-weight: medium;
+  width: 98%;
+}
+
+#writerContent {
+  border: 2px solid white;
+  align-content: center;
+}
+
+#writerContentDetail {
+  color: #FFFFFF;
+  background: #000000;
+  border: none;
+  align-self: center;
+  outline: none;
+  width: 98%;
+  resize: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: "PretendardVariable";
+  font-weight: medium;
+}
+
+#send {
+  border: 2px solid white;
+  align-content: center;
+  margin: 3%;
+}
