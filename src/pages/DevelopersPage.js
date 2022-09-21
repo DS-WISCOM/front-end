@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import Devtest from "../component/Devtest";
+import styles from "../css/DevelopersPage.module.css";
 
 function DevelopersPage() {
   return (
-    <div>DevelopersPage</div>
-  )
+    <div className={styles.developersPage}>
+      <Devtest />
+      <Devtest />
+      <Devtest />
+    </div>
+  );
 }
 
-export default DevelopersPage
+export default DevelopersPage;
