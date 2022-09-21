@@ -1,0 +1,152 @@
+@media all and (max-width:1200px) {
+    .menulist{
+        font-size: 24px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        font-size: 15px;
+    }
+
+    .footerButton{
+        margin-top: 3vh;
+        font-size: 15px;
+    }
+
+    .footerContent {
+        margin: auto;
+    }
+}
+
+@media all and (min-width:980px) and (max-width:1200px) {
+    .menulist{
+        font-size: 30px;
+    }
+}
+
+@media all and (min-width:1200px) {
+    .menulist{
+        font-size: 36px;
+    }
+
+    .footer{
+        font-size: 20px;
+    }
+
+    .homepageLink{
+        margin-left: auto;
+    }
+
+    .footerButton {
+        margin-left: auto;
+        margin-right: 53px;
+        font-size: 20px;
+    }
+
+    .footerContent {
+        margin-left: 48px;
+    }
+    
+}
+
+.navbar{
+    align-items: center;
+    background: none;
+    width: 100%;
+    height: 100%;
+}
+
+.navbarLogo{
+    font-family: "ButlerRegular";
+    font-size: 36px;
+    margin-left: 48px;
+    margin-top: 24px;
+
+}
+
+.navberContent{
+    display: flex;
+}
+
+.toggle{
+    margin-left:auto;
+}
+
+#toggleImage{
+    width: 46px;
+    height: 33px;
+    margin-right: 53px;
+    margin-top: 30px;
+}
+
+.exitBtn{
+    display: flex;
+}
+
+#toggleExitImage{
+    width: 38px;
+    height: 40px;
+    margin-right: 53px;
+    margin-top: 30px;
+    margin-left: auto;
+}
+
+.menulist{
+    display: none;
+    font-family: "PretendardVariable";
+    font-weight: bold;
+    flex-direction: column;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.toggleListWrap{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.toggleMenu{
+    list-style: none;
+    margin-right: 53px;
+}
+
+.toggleItem{
+    margin-bottom: 5vh;
+}
+
+.navLink{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.footer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    font-family: "PretendardVariable";
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.footerButton {
+    font-family: "PretendardVariable";
+    font-weight: bold;
+    background: none;
+    color: #FFFFFF;
+    border: 4px solid #FFFFFF;
+    border-radius: 40px;
+    width: auto;
+    height: auto;
+    padding: 0.5em 2em 0.5em 2em;
+    cursor: pointer;
+}
+
+.footerButton:hover{
+    background-color: #FFFFFF;
+    color: black;
+}
