@@ -1,0 +1,173 @@
+@media (min-width: 1200px) {
+
+    .pageContainer {
+        display: flex;
+        margin: auto;
+        margin-top: 60px;
+    }
+
+    .rightContainer {
+        
+    }
+
+    .contact {    
+        display: inline-block;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: middle;
+    }
+
+    .imageContainer {
+        float: left;
+        width: 400px;
+        height: 800px;
+        padding: 30px;
+    }
+
+    .developerContainer {
+        float: right;
+        width: 90%;
+        height: 360px;
+        padding: 30px;
+    }
+
+    .developerImage {
+        background-color: gray;
+        width: 400px;
+        height: 400px;
+    }
+
+    .developerName {
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .developerNameEng {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 6px;
+    }
+
+    .impression {
+        font-size: 24px;
+        margin-top: 30px;
+        margin-right: 100px;
+    }
+
+    .projectContainer {
+        float: right;
+        display: flex;
+        width: 90%;
+        height: 400px;
+        padding: 30px;
+    }
+
+    .projectLeftContainer {
+        width: 150px;
+    }
+
+    .project {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .projectName {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .projectImage {
+        background-color: gray;
+        width: 300px;
+        height: 300px;
+    }
+}
+  
+
+@media (max-width: 1200px) {
+    .pageContainer {
+    }
+
+    .rightContainer {
+    }
+
+    .contact {    
+        display: inline-block;
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .email {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: middle;
+    }
+
+    .imageContainer {
+        height: 470px;
+        padding: 30px;
+    }
+
+    .developerContainer {
+        height: 500px;
+        padding: 30px;
+    }
+
+    .developerImage {
+        background-color: gray;
+        width: 400px;
+        height: 400px;
+    }
+
+    .developerName {
+        display: inline-block;
+        font-size: 36px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+
+    .developerNameEng {
+        display: inline-block;
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 6px;
+    }
+
+    .impression {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+
+    .projectContainer {
+        height: 400px;
+        padding: 30px;
+    }
+
+    .projectLeftContainer {
+        width: 150px;
+    }
+
+    .project {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .projectName {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    .projectImage {
+        background-color: gray;
+        width: 480px;
+        height: 270px;
+        margin-top: 30px;
+    }
+}
+  
