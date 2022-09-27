@@ -1,9 +1,9 @@
-.titleContainer {
+#titleContainer {
     background-color: brown;
     height: 240px;
 }
 
-.title {
+#title {
     padding-top: 92px;
     height: 240px;
     font-size: 48px;
@@ -11,13 +11,13 @@
     font-weight: bold;
 }
 
-.contentContainer {
+#contentContainer {
     max-width: 1800px;
     padding: 40px 0;
     margin: auto;
 }
 
-.aboutContainer {
+#aboutContainer {
     margin: 40px;
 }
 
@@ -31,7 +31,7 @@
     font-size: 20px;
 }
 
-.professorContainer{
+#professorContainer{
     display: flex;
     flex-flow: wrap;
     justify-content: center;
