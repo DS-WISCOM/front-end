@@ -1,13 +1,17 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "../css/LandingPage.module.css";
 import $ from "jquery";
+import axios from "axios";
 
 function LandingPage() {
+  const [developers, setDevelopers] = useState([]);
+
   $(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
     }, 100);
   });
+
   const scrollSectionEvent = useCallback(() => {
     let winScrollTop;
     let section = $("#title");
@@ -57,6 +61,23 @@ function LandingPage() {
     });
   }, [scrollSectionEvent]);
 
+  useEffect(() => {
+    axios.get(`/api/developer/total`).then((response) => {
+      if (response.data.success) {
+        setDevelopers(
+          response.data.DeveloperList.map((developer) => {
+            return developer.name_kr;
+          })
+        );
+      } else {
+        console.log("developer list not found");
+      }
+    });
+  }, []);
+
+  const developerList = developers.map((developer) => {
+    return <div className={styles.person}>{developer}</div>;
+  });
   return (
     <>
       <div id={"pageContainer"} />
@@ -79,7 +100,7 @@ function LandingPage() {
         <div id={styles.poster}>
           <img
             src={require("../images/dummy-poster.png")}
-            width={"400px"}
+            width={newFunction()}
             height={"600px"}
           />
         </div>
@@ -90,29 +111,27 @@ function LandingPage() {
         </div>
         <div className={styles.contentRow}>
           <div className={styles.text}>지도교수</div>
-          <div className={styles.person}>박우창</div>
-          <div className={styles.person}>이주영</div>
-          <div className={styles.person}>최승훈</div>
-          <div className={styles.person}>유견아</div>
-          <div className={styles.person}>이경미</div>
+          <section className={styles.nameList}>
+            <div className={styles.person}>박우창</div>
+            <div className={styles.person}>이주영</div>
+            <div className={styles.person}>최승훈</div>
+            <div className={styles.person}>유견아</div>
+            <div className={styles.person}>이경미</div>
+          </section>
         </div>
         <div className={styles.contentRow}>
           <div className={styles.text}>졸업전시준비위원회</div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            className={styles.nameList}
+            style={{ display: "flex", flexDirection: "column" }}
+          >
             <div
               className={styles.person}
               style={{ display: "block", width: "100%", marginBottom: "36px" }}
             >
               위원장 김은서
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                width: "400px",
-                flexWrap: "wrap",
-              }}
-            >
+            <div className={styles.developerList} style={{ width: "400px" }}>
               <div className={styles.person}>김수빈</div>
               <div className={styles.person}>신하늘</div>
               <div className={styles.person}>권희원</div>
@@ -129,27 +148,14 @@ function LandingPage() {
         </div>
         <div className={styles.contentRow} style={{ marginBottom: "200px" }}>
           <div className={styles.text}>개발자</div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                width: "400px",
-                flexWrap: "wrap",
-              }}
-            >
-              <div className={styles.person}>김수빈</div>
-              <div className={styles.person}>신하늘</div>
-              <div className={styles.person}>권희원</div>
-              <div className={styles.person}>김혜수</div>
-              <div className={styles.person}>문서연</div>
-              <div className={styles.person}>유영주</div>
-              <div className={styles.person}>임예진</div>
-              <div className={styles.person}>홍수연</div>
-              <div className={styles.person}>황성민</div>
-              <div className={styles.person}>김가빈</div>
-              <div className={styles.person}>김지민</div>
-              {/*  추가할 예정 */}
+          <div
+            className={styles.nameList}
+            style={{ display: "flex", flexDirection: "column" }}
+          >
+            <div className={styles.developerList}>
+              {developerList}
+              {developerList}
+              {developerList}
             </div>
           </div>
         </div>
@@ -159,3 +165,6 @@ function LandingPage() {
 }
 
 export default LandingPage;
+function newFunction() {
+  return "400px";
+}

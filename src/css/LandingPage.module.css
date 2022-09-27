@@ -77,10 +77,12 @@
   margin-left: 100px;
   margin-bottom: 80px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .text {
   width: 25%;
+  margin-bottom: 20px;
   text-align: left;
   font-size: 20px;
   font-weight: 700;
@@ -89,6 +91,13 @@
 .person {
   display: inline-block;
   margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.developerList {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
 }
 
 @media all and (max-width: 1000px) {
@@ -112,5 +121,20 @@
   #poster {
     float: none;
     margin: 0 auto;
+  }
+  .text,
+  .nameList {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .contentRow {
+    margin-left: 0;
+  }
+  .developerList {
+    width: 400px;
+    align-items: center;
+    justify-content: center;
   }
 }
