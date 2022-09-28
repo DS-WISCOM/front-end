@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import YoutubeEmbed from '../youtube/YoutubeEmbed.js'
 import styles from "../css/ProjectsdetailPage.module.css"
 import like from "../images/like.png"
-import dummyPPT from '../images/background.jpg'
+import dummyPPT from '../images/dummy-ppt.PNG'
 import arrowLeft from '../images/arrowLeft.png'
 import arrowRight from '../images/arrowRight.png'
 
@@ -32,7 +32,12 @@ function ProjectsdetailPage() {
       <div id={styles.line}></div>
       <div id={styles.projectDeveloper}>Developer</div>
       {/*돌릴거임*/}
-      <div id={styles.developerName}>권희원</div>
+      <div id={styles.rowName}>
+        <div className={styles.developerName}>신컴공</div>
+        <div className={styles.developerName}>권컴공</div>
+        <div className={styles.developerName}>유컴공</div>
+        <div className={styles.developerName}>홍컴공</div>
+      </div>
       <div id={styles.line}></div>
       <img id={styles.like} alt="like" src={like} />
       <div id={styles.comment}>Comments ({likeNum})</div>
@@ -49,10 +54,10 @@ function ProjectsdetailPage() {
       </div>
       <div id={styles.comments}>
         <div id={styles.nameAndDate}>
-          <div id={styles.commentDetailName}>작성자 이름</div>
-          <div id={styles.commentDetailDate}>2022.09.27</div>
+          <div id={styles.commentDetailName}>김덕성</div>
+          <div id={styles.commentDetailDate}>2022.09.28</div>
         </div>
-        <div id={styles.commentDetailContent}>내용내용내용vvvvvvv내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</div>
+        <div id={styles.commentDetailContent}>너무 마음에 드는 아이디어네요!</div>
       </div>
       <div id={styles.page}>
         <button className={styles.arrowBtn} onClick={clickSend}>
