@@ -1,0 +1,35 @@
+.devList{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.devCard{
+  margin: 50px;
+  align-items: center;
+  text-align: center;
+  font-family: "PretendardVariable";
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.image{
+  width: 250px;
+  height: 250px;
+  background-color: #D9D9D9;
+  margin-bottom: 20px;
+}
+
+.mainText {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.subText {
+  font-size: 24px;
+  color: white;
+  font-weight: 400;
+}
