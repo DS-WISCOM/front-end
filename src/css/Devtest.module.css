@@ -1,11 +1,11 @@
-.devList{
+#devList{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.devCard{
+#devCard{
     margin: 50px;
     align-items: center;
     text-align: center;
@@ -14,8 +14,8 @@
     font-size: 24px;
 }
 
-.devPofile{
+#devProfile{
     width: 250px;
     height: 250px;
-    background-color: #D9D9D9;
+    background-color: #c1bbbb;
 }

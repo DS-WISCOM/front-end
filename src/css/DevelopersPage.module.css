@@ -1,0 +1,12 @@
+#developersPage, #projectsPage{
+
+}
+
+#developersPageTitle, #projectsPageTitle {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 48px;
+    font-family: "Pretenderd";
+    font-family: "PretendardVariable";
+    font-weight: bold;
+}
