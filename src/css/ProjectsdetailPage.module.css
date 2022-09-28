@@ -3,6 +3,11 @@
   src: url("../fonts/Pretendard-SemiBold.ttf");
 }
 
+@font-face {
+  font-family: "PretendardMedium";
+  src: url("../fonts/Pretendard-Medium.ttf");
+}
+
 #projectsdetail {
   display: flex;
   align-items: center;
@@ -37,19 +42,30 @@
 }
 
 #projectImg {
-  margin-bottom: 3%;
+  margin-bottom: 5%;
 }
 
 #projectDeveloper {
   font-weight: bold;
-  font-size: 24px;
-  margin-top: 2%;
+  font-size: 32px;
+  margin-top: 3%;
+  margin-bottom: 2%;
 }
 
-#developerName {
+#rowName {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.developerName {
   font-weight: bold;
-  font-size: 24px;
-  margin: 2%;
+  font-size: 28px;
+  margin-top: 3%;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  width: 12vw;
 }
 
 #videoResponsive {
@@ -62,28 +78,45 @@
 }
 
 #like {
-  width: 5%;
-  height: 5%;
+  width: 80px;
+  height: 80px;
   margin-top: 3%;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
+}
+
+#comment {
+  font-size: 28px;
+  font-weight: bold;
 }
 
 #line {
   border: 2px solid white;
   width: 90%;
   background: #FFFFFF;
+  margin-top: 2%;
+}
+
+#row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 80vw;
 }
 
 #write {
-  width: 80%;
-  margin: 3%;
-  flex-direction: row;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
 }
 
 #writerName {
   border: 2px solid white;
   align-content: center;
+  display: flex;
   margin-bottom: 1%;
+  /* width: 80vw; */
 }
 
 #writerNameDetail {
@@ -92,18 +125,16 @@
   border: none;
   align-self: center;
   outline: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-family: "PretendardVariable";
-  font-weight: medium;
-  width: 98%;
+  padding: 10px;
+  font-family: "PretendardMedium";
+  font-size: 20px;
 }
 
 #writerContent {
   border: 2px solid white;
   align-content: center;
+  display: flex;
+  /* width: 80vw; */
 }
 
 #writerContentDetail {
@@ -114,16 +145,204 @@
   outline: none;
   width: 98%;
   resize: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-family: "PretendardVariable";
-  font-weight: medium;
+  padding: 10px;
+  font-family: "PretendardMedium";
+  line-height: 25px;
+  font-size: 20px;
 }
 
-#send {
+#sendBtn {
   border: 2px solid white;
+  border-radius: 20px;
+  background: #000000;
+  color: #FFFFFF;
   align-content: center;
-  margin: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 2%;
+  padding: 2%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#comments {
+  border: 2px solid white;
+  border-radius: 5px;
+  align-content: center;
+  display: flex;
+  width: 80vw;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+#nameAndDate {
+  border-radius: 5px;
+  align-self: center;
+  display: flex;
+  width: 80vw;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 1%;
+}
+
+#commentDetailName {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#commentDetailDate {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  font-family: "PretendardMedium";
+  font-size: 20px;
+}
+
+#commentDetailContent {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  align-self: flex-start;
+  font-family: "PretendardMedium";
+  font-size: 20px;
+}
+
+#page {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.arrowBtn {
+  display: block;
+  background: #000000;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 20hv;
+  height: 20hv;
+}
+
+.number {
+  margin-right: 3%;
+  margin-left: 3%;
+  font-family: "PretendardMedium";
+  font-size: 20px;
+  padding-bottom: 3%;
+}
+
+@media all and (max-width: 1200px) {
+  #iframCss {
+    width: 640px;
+    height: 360px;
+  }
+
+  #projectImg {
+    width: 480px;
+    height: 270px;
+  }
+}
+
+@media all and (max-width: 900px) {
+  #iframCss {
+    width: 480px;
+    height: 270px;
+  }
+
+  #projectImg {
+    width: 400px;
+    height: 225px;
+  }
+
+  #like {
+    width: 60px;
+    height: 60px;
+  }
+
+  #projectTitle {
+    font-size: 36px;
+  }
+
+  #teamName, #projectDeveloper {
+    font-size: 24px;
+  }
+
+  .developerName, #comment {
+    font-size: 20px;
+  }
+
+  #projectContent, #writerNameDetail, #writerContentDetail, #sendBtn, #commentDetailName, #commentDetailDate, #commentDetailContent, .number {
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width: 650px) {
+  #iframCss {
+    width: 400px;
+    height: 225px;
+  }
+
+  #projectImg {
+    width: 320px;
+    height: 180px;
+  }
+
+  #projectTitle {
+    font-size: 32px;
+  }
+
+  #teamName {
+    font-size: 22px;
+  }
+
+  #projectContent {
+    font-size: 12px;
+  }
+}
+
+@media all and (max-width: 576px) {
+  #iframCss {
+    width: 320px;
+    height: 180px;
+  }
+
+  #projectImg {
+    width: 256px;
+    height: 144px;
+  }
+
+  #like {
+    width: 40px;
+    height: 40px;
+  }
+
+  #projectTitle {
+    font-size: 26px;
+  }
+
+  #teamName, .developerName, #comment {
+    font-size: 16px;
+  }
+
+  #projectContent {
+    font-size: 10px;
+  }
+
+  #projectDeveloper {
+    font-size: 18px;
+  }
+
+  #writerNameDetail, #writerContentDetail, #sendBtn, #commentDetailName, #commentDetailDate, #commentDetailContent, .number {
+    font-size: 12px;
+  }
 }
