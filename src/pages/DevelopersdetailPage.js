@@ -23,7 +23,7 @@ const DevelopersdetailPage = (props) => {
       <div id={styles.pageContainer}>
         <div id={styles.imageContainer}>
           <img id={styles.developerImage} src={developer.img} alt={`${developer.name_kr} 개발자 프로필 사진`} />
-          <div id={styles.developerName}>{developer.name_kr}&nbsp;&nbsp;</div>
+          <div id={styles.developerName}>{developer.name_kr}</div>
           <div id={styles.developerNameEng}>{developer.name_eng}</div>
         </div>
         <div id={styles.rightContainer}>
@@ -34,13 +34,15 @@ const DevelopersdetailPage = (props) => {
               {developer.impression}
             </div>
           </div>
+          {developer.project_id &&
           <div id={styles.projectContainer}>
             <div id={styles.projectLeftContainer}>
               <div id={styles.project}>Project</div>
-              <div id={styles.projectName}>프로젝트명</div>
+              <div id={styles.projectName}>{developer.project_id.name}</div>
             </div>
-            <div id={styles.projectImage} />
+            <img id={styles.projectImage} src={developer.project_id.img} />
           </div>
+          }
         </div>
       </div>
     </>
