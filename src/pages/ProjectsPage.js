@@ -18,7 +18,7 @@ function ProjectsPage() {
 
   const projectList = projects?.map((project, idx) => {
     return (
-      <ProjectCard index={idx} data={project} />
+      <ProjectCard key={idx} data={project} />
     )
   })
 
