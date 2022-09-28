@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import Footer from "./Footer.js";
 import styles from "../css/Navbar.module.css";
@@ -8,21 +8,22 @@ import menuOpened from "../images/menu_opened.png";
 function Navbar() {
   const [isToggled, setIsToggled] = useState(false);
 
-  const handleExit = () => {
-    setIsToggled(!isToggled);
-    console.log(isToggled);
-
-    if (isToggled) {
+  useEffect(() => {
+    if (!isToggled) {
       const current = document.getElementById(styles.menulist);
       current.style.display = "none";
 
       const item = document.getElementById(styles.toggleImage);
       item.style.display = "flex";
     }
+  }, [isToggled]);
+
+  const handleExit = () => {
+    setIsToggled(false);
   };
 
   const handleMenu = () => {
-    setIsToggled(!isToggled);
+    setIsToggled(true);
     console.log(isToggled);
 
     if (!isToggled) {
@@ -35,19 +36,19 @@ function Navbar() {
   };
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.navberContent}>
-        <div className={styles.navbarLogo}>
-          <NavLink to="/" className={styles.navLink}>
+    <div id={styles.navbar}>
+      <div id={styles.navberContent}>
+        <div id={styles.navbarLogo}>
+          <NavLink to="/" id={styles.navLink}>
             WISCOM
           </NavLink>
         </div>
-        <div className={styles.toggle} onClick={handleMenu}>
+        <div id={styles.toggle} onClick={handleMenu}>
           <img id={styles.toggleImage} src={menuClosed} alt="메뉴" />
         </div>
 
-        <div className={styles.menulist} id={styles.menulist}>
-          <div className={styles.exitBtn}>
+        <div id={styles.menulist}>
+          <div id={styles.exitBtn}>
             <img
               id={styles.toggleExitImage}
               src={menuOpened}
@@ -56,25 +57,41 @@ function Navbar() {
             />
           </div>
 
-          <div className={styles.toggleListWrap}>
-            <ul className={styles.toggleMenu}>
-              <li className={styles.toggleItem}>
-                <NavLink to="/" className={styles.navLink}>
+          <div id={styles.toggleListWrap}>
+            <ul id={styles.toggleMenu}>
+              <li id={styles.toggleItem}>
+                <NavLink
+                  to="/"
+                  id={styles.navLink}
+                  onClick={() => setIsToggled(false)}
+                >
                   HOME
                 </NavLink>
               </li>
-              <li className={styles.toggleItem}>
-                <NavLink to="/about" className={styles.navLink}>
+              <li id={styles.toggleItem}>
+                <NavLink
+                  to="/about"
+                  id={styles.navLink}
+                  onClick={() => setIsToggled(false)}
+                >
                   ABOUT
                 </NavLink>
               </li>
-              <li className={styles.toggleItem}>
-                <NavLink to="/projects" className={styles.navLink}>
+              <li id={styles.toggleItem}>
+                <NavLink
+                  to="/projects"
+                  id={styles.navLink}
+                  onClick={() => setIsToggled(false)}
+                >
                   PROJECT
                 </NavLink>
               </li>
-              <li className={styles.toggleItem}>
-                <NavLink to="/developers" className={styles.navLink}>
+              <li id={styles.toggleItem}>
+                <NavLink
+                  to="/developers"
+                  id={styles.navLink}
+                  onClick={() => setIsToggled(false)}
+                >
                   DEVELOPER
                 </NavLink>
               </li>

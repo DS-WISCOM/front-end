@@ -1,88 +1,91 @@
 @media (min-width: 1200px) {
 
-    .pageContainer {
+    #pageContainer {
         display: flex;
         margin: auto;
         margin-top: 60px;
+        max-width: 1600px;
     }
 
-    .rightContainer {
+    #rightContainer {
         
     }
 
-    .contact {    
+    #contact {    
         display: inline-block;
         font-size: 36px;
         font-weight: bold;
     }
 
-    .email {
+    #email {
         display: inline-block;
         font-size: 32px;
         font-weight: middle;
     }
 
-    .imageContainer {
+    #imageContainer {
         float: left;
         width: 400px;
         height: 800px;
         padding: 30px;
     }
 
-    .developerContainer {
-        float: right;
+    #developerContainer {
         width: 90%;
-        height: 360px;
+        min-height: 360px;
         padding: 30px;
     }
 
-    .developerImage {
+    #developerImage {
+        display: block;
         background-color: gray;
         width: 400px;
         height: 400px;
     }
 
-    .developerName {
+    #developerName {
         font-size: 36px;
         font-weight: bold;
         margin-top: 20px;
     }
 
-    .developerNameEng {
+    #developerNameEng {
         font-size: 32px;
         font-weight: bold;
         margin-top: 6px;
     }
 
-    .impression {
+    #impression {
         font-size: 24px;
         margin-top: 30px;
-        margin-right: 100px;
+        
+        line-height: 2em;
     }
 
-    .projectContainer {
-        float: right;
-        display: flex;
+    #projectContainer {
+        float: left;
         width: 90%;
-        height: 400px;
         padding: 30px;
+        margin-bottom: 50px;
     }
 
-    .projectLeftContainer {
-        width: 150px;
+    #projectLeftContainer {
+        min-width: 300px;
     }
 
-    .project {
+    #project {
         font-size: 36px;
         font-weight: bold;
     }
 
-    .projectName {
+    #projectName {
         font-size: 24px;
-        margin-top: 10px;
+        margin: 20px 0;
     }
 
-    .projectImage {
+    #projectImage {
+        float: left;
+        display: block;
         background-color: gray;
         width: 300px;
         height: 300px;
@@ -91,83 +94,91 @@
   
 
 @media (max-width: 1200px) {
-    .pageContainer {
+    #pageContainer {
+        margin-top: 60px;
     }
 
-    .rightContainer {
+    #rightContainer {
+        text-align: center;
     }
 
-    .contact {    
-        display: inline-block;
-        font-size: 36px;
+    #contact {    
+        
+        font-size: 28px;
         font-weight: bold;
     }
 
-    .email {
+    #email {
         display: inline-block;
-        font-size: 32px;
+        font-size: 24px;
         font-weight: middle;
     }
 
-    .imageContainer {
-        height: 470px;
+    #imageContainer {
+        text-align: center;
         padding: 30px;
     }
 
-    .developerContainer {
-        height: 500px;
+    #developerContainer {
         padding: 30px;
     }
 
-    .developerImage {
+    #developerImage {
         background-color: gray;
         width: 400px;
         height: 400px;
     }
 
-    .developerName {
+    #developerName {
         display: inline-block;
         font-size: 36px;
+        width: 100%;
         font-weight: bold;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
-    .developerNameEng {
+    #developerNameEng {
         display: inline-block;
         font-size: 32px;
         font-weight: bold;
-        margin-top: 6px;
+        margin-top: 10px;
     }
 
-    .impression {
+    #impression {
+        text-align: left;
         font-size: 24px;
-        margin-top: 30px;
+        margin: 160px 0;
+        line-height: 2em;
     }
 
-    .projectContainer {
-        height: 400px;
+    #projectContainer {
+        text-align: center;
         padding: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 
-    .projectLeftContainer {
-        width: 150px;
+    #projectLeftContainer {
+        min-width: 55%;
     }
 
-    .project {
+    #project {
         font-size: 36px;
         font-weight: bold;
     }
 
-    .projectName {
+    #projectName {
         font-size: 24px;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 
-    .projectImage {
+    #projectImage {
+        display: block;
         background-color: gray;
-        width: 480px;
-        height: 270px;
-        margin-top: 30px;
+        width: 400px;
+        height: 400px;
+        margin: 60px;
     }
 }
   

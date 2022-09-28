@@ -4,9 +4,8 @@ import styles from "../css/DevelopersPage.module.css";
 
 function DevelopersPage() {
   return (
-    <div className={styles.developersPage}>
-      <Devtest />
-      <Devtest />
+    <div id={styles.developersPage}>
+      <div id={styles.developersPageTitle}>DEVELOPERS</div>
       <Devtest />
     </div>
   );

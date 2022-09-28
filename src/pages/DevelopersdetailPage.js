@@ -1,36 +1,52 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import styles from "../css/DevelopersdetailPage.module.css";
 
-function DevelopersdetailPage() {
-  return (
+const DevelopersdetailPage = (props) => {
+  const testId = "20180122";
+  const [developer, setDeveloper] = useState([]);
+
+  useEffect(() => {
+    axios.get(`/api/developer/${testId}`).then((response) => {
+        if(response.data.success) {
+          setDeveloper(response.data.developer[0]);        
+        }
+    })
+  }, [testId]);
+
+  useEffect(() => {
+    axios.get(`/api/developer/${developer.project_id}`)
+  })
+
+  return ( developer && 
     <>
-      <div className={styles.pageContainer}>
-        <div className={styles.imageContainer}>
-          <div className={styles.developerImage} />
-          <div className={styles.developerName}>김덕우&nbsp;&nbsp;</div>
-          <div className={styles.developerNameEng}>Kim Dukwoo</div>
+      <div id={styles.pageContainer}>
+        <div id={styles.imageContainer}>
+          <img id={styles.developerImage} src={developer.img} alt={`${developer.name_kr} 개발자 프로필 사진`} />
+          <div id={styles.developerName}>{developer.name_kr}</div>
+          <div id={styles.developerNameEng}>{developer.name_eng}</div>
         </div>
-        <div className={styles.rightContainer}>
-          <div className={styles.developerContainer}>
-            <div className={styles.contact}>Contact&nbsp;&nbsp;</div>
-            <div className={styles.email}>000000@duksung.ac.kr</div>
-            <div className={styles.impression}>
-              덕성여자대학교 컴퓨터공학전공 졸업작품전시회 WISCOM 홈페이지 제작
-              중입니다. 이 박스에는 개발자의 소감이 들어갑니다. 소감을 여러 줄
-              적어봅시다.
+        <div id={styles.rightContainer}>
+          <div id={styles.developerContainer}>
+            <div id={styles.contact}>Contact&nbsp;&nbsp;</div>
+            <div id={styles.email}>{developer.email}</div>
+            <div id={styles.impression}>
+              {developer.impression}
             </div>
           </div>
-          <div className={styles.projectContainer}>
-            <div className={styles.projectLeftContainer}>
-              <div className={styles.project}>Project</div>
-              <div className={styles.projectName}>프로젝트명</div>
+          {developer.project_id &&
+          <div id={styles.projectContainer}>
+            <div id={styles.projectLeftContainer}>
+              <div id={styles.project}>Project</div>
+              <div id={styles.projectName}>{developer.project_id.name}</div>
             </div>
-            <div className={styles.projectImage} />
+            <img id={styles.projectImage} src={developer.project_id.img} />
           </div>
+          }
         </div>
       </div>
     </>
   );
-}
+};
 
 export default DevelopersdetailPage;
