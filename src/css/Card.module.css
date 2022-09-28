@@ -6,18 +6,19 @@
 }
 
 .devCard{
-  margin: 50px;
+  margin: 30px;
   align-items: center;
   text-align: center;
   font-family: "PretendardVariable";
   font-weight: bold;
   font-size: 24px;
+  width: 250px;
+  text-decoration: none;
 }
 
 .image{
   width: 250px;
   height: 250px;
-  background-color: #D9D9D9;
   margin-bottom: 20px;
 }
 
@@ -29,7 +30,9 @@
 }
 
 .subText {
-  font-size: 24px;
+  font-size: 22px;
   color: white;
   font-weight: 400;
+  word-wrap: break-word;
+  word-break: keep-all;
 }

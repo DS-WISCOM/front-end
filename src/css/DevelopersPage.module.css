@@ -10,3 +10,17 @@
     font-family: "PretendardVariable";
     font-weight: bold;
 }
+
+#list {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 50px 90px;
+}
+
+@media all and (max-width: 1000px) {
+    #list {
+        justify-content: center;
+    }
+}

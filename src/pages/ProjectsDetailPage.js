@@ -1,13 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import YoutubeEmbed from '../youtube/YoutubeEmbed.js'
 import styles from "../css/ProjectsdetailPage.module.css"
 import like from "../images/like.png"
 import dummyPPT from '../images/dummy-ppt.PNG'
 import arrowLeft from '../images/arrowLeft.png'
 import arrowRight from '../images/arrowRight.png'
+import {useLocation} from "react-router-dom";
+import axios from "axios";
 
-function ProjectsdetailPage() {
+function ProjectsDetailPage() {
+  const location = useLocation();
+  const projectId = location.state.data; // 프로젝트 id
+  const [project, setProject] = useState([]);
   const [likeNum, setLikeNum] = useState(0)
+
+  useEffect(() => {
+    // console.log(projectId)
+    if(projectId) {
+      axios.get(`/api/project/${projectId}`).then((response) => {
+        setProject(response.data.projects);
+        // console.log(response.data.projects);
+      })
+    }
+  }, []);
 
   const clickSend = () => {
     alert('gg')
@@ -15,10 +30,10 @@ function ProjectsdetailPage() {
 
   return (
     <div id={styles.projectsdetail}>
-      <div id={styles.projectTitle}>프로젝트 명</div>
-      <div id={styles.teamName}>팀 명</div>
-      <div id={styles.projectContent}>프로젝트 소개</div>
-      <div id={styles.line}></div>
+      <div id={styles.projectTitle}>{project.name}</div>
+      <div id={styles.teamName}>{project.team_name}</div>
+      <div id={styles.projectContent}>{project.introduce}</div>
+      <div id={styles.line} />
       <div id={styles.projectVideo}>
         <YoutubeEmbed embedId='JoZfq8rEbkg' />
         {/* {dummy.ppt.map((ppt) => {
@@ -29,7 +44,7 @@ function ProjectsdetailPage() {
         <div><img id={styles.projectImg} alt='ppt' src={dummyPPT} /></div>
         <div><img id={styles.projectImg} alt='ppt' src={dummyPPT} /></div>
       </div>
-      <div id={styles.line}></div>
+      <div id={styles.line} />
       <div id={styles.projectDeveloper}>Developer</div>
       {/*돌릴거임*/}
       <div id={styles.rowName}>
@@ -38,16 +53,16 @@ function ProjectsdetailPage() {
         <div className={styles.developerName}>유컴공</div>
         <div className={styles.developerName}>홍컴공</div>
       </div>
-      <div id={styles.line}></div>
+      <div id={styles.line} />
       <img id={styles.like} alt="like" src={like} />
       <div id={styles.comment}>Comments ({likeNum})</div>
       <div id={styles.row}>
         <div id={styles.write}>
           <div id={styles.writerName}>
-            <input id={styles.writerNameDetail} type="text" placeholder='작성자 이름'></input>
+            <input id={styles.writerNameDetail} type="text" placeholder='작성자 이름' />
           </div>
           <div id={styles.writerContent}>
-            <textarea id={styles.writerContentDetail} placeholder='내용을 작성해주세요.'></textarea>
+            <textarea id={styles.writerContentDetail} placeholder='내용을 작성해주세요.' />
           </div>
         </div>
         <button id={styles.sendBtn} onClick={clickSend}>작성</button>
@@ -76,4 +91,4 @@ function ProjectsdetailPage() {
   )
 }
 
-export default ProjectsdetailPage
+export default ProjectsDetailPage

@@ -24,7 +24,7 @@ function Navbar() {
 
   const handleMenu = () => {
     setIsToggled(true);
-    console.log(isToggled);
+    // console.log(isToggled);
 
     if (!isToggled) {
       const current = document.getElementById(styles.menulist);

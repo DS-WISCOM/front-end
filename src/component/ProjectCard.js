@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "../css/Card.module.css";
+import {Link} from "react-router-dom";
 
-const ProjectCard = () => {
+const ProjectCard = (props) => {
+  const data = props.data;
+
   return (
-    <div className={styles.devList}>
-      <div className={styles.devCard}>
-        <div className={styles.image}></div>
-        <div className={styles.mainText}>본인이름</div>
-        <div className={styles.subText}>본인 프로젝트</div>
-      </div>
-    </div>
+    <Link to={'/projects/detail'} state={{ data: data && data._id }} className={styles.devCard}>
+      <img src={data.img} className={styles.image} />
+      <div className={styles.mainText}>{data.name}</div>
+      <div className={styles.subText}>{data.team_name}</div>
+    </Link>
   )
 }
 
 export default ProjectCard;
+

@@ -1,24 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "../css/DevelopersdetailPage.module.css";
+import { useLocation } from "react-router-dom";
 
-const DevelopersdetailPage = (props) => {
-  const testId = "20180122";
+const DevelopersDetailPage = (props) => {
+  const location = useLocation();
+  const developerId = location.state.data;
   const [developer, setDeveloper] = useState([]);
 
   useEffect(() => {
-    axios.get(`/api/developer/${testId}`).then((response) => {
+    // console.log(developerId);
+    if(developerId) {
+      axios.get(`/api/developer/${developerId}`).then((response) => {
         if(response.data.success) {
-          setDeveloper(response.data.developer[0]);        
+          setDeveloper(response.data.developer[0]);
+          // console.log(response.data.developer[0]);
         }
-    })
-  }, [testId]);
+      })
+    }
+  }, []);
 
-  useEffect(() => {
-    axios.get(`/api/developer/${developer.project_id}`)
-  })
-
-  return ( developer && 
+  return (
     <>
       <div id={styles.pageContainer}>
         <div id={styles.imageContainer}>
@@ -49,4 +51,4 @@ const DevelopersdetailPage = (props) => {
   );
 };
 
-export default DevelopersdetailPage;
+export default DevelopersDetailPage;
