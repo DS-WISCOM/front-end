@@ -3,23 +3,29 @@
   src: url("../fonts/Butler_Regular.otf");
 }
 
-#titleContainer {
+.titleContainer {
   display: inline-block;
   width: 100vw;
+  transform: translateX(-101%);
 }
 
-#title {
+.active {
+  transform: translateX(0%);
+  transition: 1.2s 0.5s;
+}
+
+.title {
   margin-top: 530px;
   margin-left: 48px;
   color: #fff;
   text-align: left;
-  font-family: 'Butler', sans-serif;
+  font-family: "Butler", sans-serif;
   font-weight: 300;
   font-size: 36px;
   letter-spacing: 5px;
 }
 
-#title p {
+.title p {
   /*background: -webkit-linear-gradient(white, #9d9d9d);*/
   -webkit-background-clip: text;
   /*-webkit-text-fill-color: transparent;*/
@@ -41,7 +47,7 @@
 
 #poster {
   float: right;
-  /*margin-right: 80px;*/
+  margin-right: 80px;
   width: 40%;
   min-width: 400px;
   /*margin-top: 95px;*/
@@ -60,19 +66,23 @@
 #contentTitle {
   font-weight: 700;
   font-size: 32px;
-  margin-left: 100px;
+  margin: 0 100px;
+  word-break: normal;
 }
 
-#contentRow {
+.contentRow {
   width: 100%;
   min-height: 100%;
   margin-top: 100px;
   margin-left: 100px;
+  margin-bottom: 80px;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .text {
   width: 25%;
+  margin-bottom: 20px;
   text-align: left;
   font-size: 20px;
   font-weight: 700;
@@ -81,13 +91,21 @@
 .person {
   display: inline-block;
   margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.developerList {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
 }
 
 @media all and (max-width: 1000px) {
   #poster img {
     margin-top: 100px;
   }
-  #poster, #posterText {
+  #poster,
+  #posterText {
     float: none;
     margin: 0 auto;
   }
@@ -104,5 +122,19 @@
     float: none;
     margin: 0 auto;
   }
+  .text,
+  .nameList {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
 
+  .contentRow {
+    margin-left: 0;
+  }
+  .developerList {
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+  }
 }
