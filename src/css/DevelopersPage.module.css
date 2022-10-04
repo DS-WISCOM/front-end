@@ -1,5 +1,5 @@
 #developersPage, #projectsPage{
-
+    margin: 0 100px;
 }
 
 #developersPageTitle, #projectsPageTitle {
@@ -12,11 +12,11 @@
 }
 
 #list {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 50px 90px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 80px;
+    place-items: center;
+    justify-content: center;
 }
 
 @media all and (max-width: 1000px) {

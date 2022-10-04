@@ -81,7 +81,11 @@ function LandingPage() {
 
   return (
     <>
+      <div id={styles.stars} />
+      <div id={styles.stars2} />
+      <div id={styles.stars3} />
       <div id={"pageContainer"} />
+
       <div id="title" className={styles.title}>
         <p>Leading Women</p>
         <p>Archiving Developer</p>
