@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from "../css/ProjectsdetailPage.module.css"
+import styles from "../css/ProjectsDetailPage.module.css"
 
 const YoutubeEmbed = ({embedId}) => (
   <div id={styles.videoResponsive}>

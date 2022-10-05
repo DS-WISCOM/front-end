@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import YoutubeEmbed from '../youtube/YoutubeEmbed.js'
-import styles from "../css/ProjectsdetailPage.module.css"
+import styles from "../css/ProjectsDetailPage.module.css"
 import like from "../images/like.png"
-import dummyPPT from '../images/dummy-ppt.PNG'
 import arrowLeft from '../images/arrowLeft.png'
 import arrowRight from '../images/arrowRight.png'
 import {useLocation} from "react-router-dom";
@@ -12,17 +11,28 @@ function ProjectsDetailPage() {
   const location = useLocation();
   const projectId = location.state.data; // 프로젝트 id
   const [project, setProject] = useState([]);
-  const [likeNum, setLikeNum] = useState(0)
+  const [developer, setDeveloper] = useState([]);
 
   useEffect(() => {
     // console.log(projectId)
     if(projectId) {
       axios.get(`/api/project/${projectId}`).then((response) => {
         setProject(response.data.projects);
-        // console.log(response.data.projects);
+        setDeveloper(response.data.devsInfo);
       })
     }
   }, []);
+
+  async function addLike() {
+    if(projectId) {
+      const data = await axios.post(`/api/project/${projectId}/addLike`)
+      console.log(data)
+      axios.get(`/api/project/${projectId}`).then((response) => {
+        // setProject(response.data.projects);
+        console.log(response.data)
+      })
+    }
+  }
 
   const clickSend = () => {
     alert('gg')
@@ -35,27 +45,28 @@ function ProjectsDetailPage() {
       <div id={styles.projectContent}>{project.introduce}</div>
       <div id={styles.line} />
       <div id={styles.projectVideo}>
-        <YoutubeEmbed embedId='JoZfq8rEbkg' />
-        {/* {dummy.ppt.map((ppt) => {
+        <YoutubeEmbed embedId={project.video} />
+        {project.ppt && project?.ppt.map((ppt, idx) => {
           return (
-            <img className="ppt-img" alt="ppt" src={ppt.img1} />
+            <div><img id={styles.projectImg} alt='ppt' key={idx} src={ppt} /></div>
           )
-        })} */}
-        <div><img id={styles.projectImg} alt='ppt' src={dummyPPT} /></div>
-        <div><img id={styles.projectImg} alt='ppt' src={dummyPPT} /></div>
+        })}
       </div>
       <div id={styles.line} />
       <div id={styles.projectDeveloper}>Developer</div>
       {/*돌릴거임*/}
       <div id={styles.rowName}>
-        <div className={styles.developerName}>신컴공</div>
-        <div className={styles.developerName}>권컴공</div>
-        <div className={styles.developerName}>유컴공</div>
-        <div className={styles.developerName}>홍컴공</div>
+        {developer && developer?.map((developer, idx) => {
+          return (
+          <div className={styles.developerName} key={idx}>{developer.name_kr}</div>
+          )
+        })}
       </div>
       <div id={styles.line} />
-      <img id={styles.like} alt="like" src={like} />
-      <div id={styles.comment}>Comments ({likeNum})</div>
+      <button id={styles.likeBtn} onClick={addLike}>
+        <img id={styles.like} alt="like" src={like} />
+      </button>
+      <div id={styles.comment}>Comments ({project.likes})</div>
       <div id={styles.row}>
         <div id={styles.write}>
           <div id={styles.writerName}>
