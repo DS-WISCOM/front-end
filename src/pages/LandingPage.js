@@ -21,7 +21,7 @@ function LandingPage() {
 
     const setProperty = () => {
       winScrollTop = $(window).scrollTop();
-      sectionOffsetTop = section.offset().top;
+      sectionOffsetTop = section.offset()?.top;
       sectionHeight = section.height();
       sectionOffsetBottom = sectionOffsetTop + sectionHeight;
     };
@@ -34,9 +34,9 @@ function LandingPage() {
         winScrollTop <= sectionOffsetBottom
       ) {
         // active css 추가
-        document.getElementById("posterBox").classList.add(`${styles.active}`);
+        document.getElementById("posterBox")?.classList.add(`${styles.active}`);
       } else if (winScrollTop > sectionOffsetBottom) {
-        document.getElementById("posterBox").classList.add(`${styles.active}`);
+        document.getElementById("posterBox")?.classList.add(`${styles.active}`);
       }
     };
 
@@ -75,9 +75,10 @@ function LandingPage() {
     });
   }, []);
 
-  const developerList = developers.map((developer) => {
-    return <div className={styles.person}>{developer}</div>;
+  const developerList = developers.map((developer, idx) => {
+    return <div className={styles.person} key={idx}>{developer}</div>;
   });
+
   return (
     <>
       <div id={"pageContainer"} />

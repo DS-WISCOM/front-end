@@ -5,8 +5,8 @@ import Navbar from "./component/Navbar";
 import AboutPage from "./pages/AboutPage";
 import DevelopersPage from "./pages/DevelopersPage";
 import ProjectsPage from "./pages/ProjectsPage";
-import DevelopersdetailPage from "./pages/DevelopersdetailPage";
-import ProjectsdetailPage from "./pages/ProjectsdetailPage";
+import DevelopersDetailPage from "./pages/DevelopersDetailPage";
+import ProjectsDetailPage from "./pages/ProjectsDetailPage";
 
 function App() {
   return (
@@ -20,9 +20,9 @@ function App() {
             <Route path="/projects" element={<ProjectsPage />} />
             <Route
               path="/developers/detail"
-              element={<DevelopersdetailPage />}
+              element={<DevelopersDetailPage />}
             />
-            <Route path="/projects/detail" element={<ProjectsdetailPage />} />
+            <Route path="/projects/detail" element={<ProjectsDetailPage />} />
           </Route>
         </Routes>
       </Router>
