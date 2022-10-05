@@ -10,7 +10,7 @@ const DevelopersScroll = () => {
   const count = useState(2);
   var pageParam = 1;
 
-  const fetchPostList = async (pageParam) => {
+  const fetchPostList = async () => {
     const res = await axios.get(`/api/developer/total?page=${pageParam}`);
     //const { posts } = developers;
     //const { isLast } = developers.length;
@@ -31,8 +31,14 @@ const DevelopersScroll = () => {
     "developers_data",
     () => fetchPostList(pageParam),
     {
-      getNextPageParam: (lastPage) =>
-        pageParam <= count ? lastPage.nextPage : undefined,
+      getNextPageParam: (lastPage, allPages) => {
+        const nextPage = lastPage + 1;
+        console.log(nextPage);
+
+        return nextPage;
+        //pageParam <= count ?
+        // pageParam <= count ? lastPage.nextPage : undefined,
+      },
     }
   );
 
@@ -44,12 +50,14 @@ const DevelopersScroll = () => {
   if (status === "error") return <div>Error fetching data</div>;
 
   const developerList = data?.pages.map((page) => {
-    <div>
-      {page?.developers_data?.map((dev, idx) => {
-        //console.log(dev, idx);
-        return <DeveloperCard key={idx} data={dev} />;
-      })}
-    </div>;
+    return (
+      <>
+        {page?.developers_data?.map((dev, idx) => {
+          //console.log(dev, idx);
+          return <DeveloperCard key={idx} data={dev} />;
+        })}
+      </>
+    );
     //return <DeveloperCard key={idx} data={developer} />;
   });
 
