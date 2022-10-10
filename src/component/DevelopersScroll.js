@@ -1,44 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styles from "../css/DevelopersPage.module.css";
-import DeveloperCard from "../component/DeveloperCard";
+import DeveloperCard from "./DeveloperCard";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "react-query";
 import axios from "axios";
 
 const DevelopersScroll = () => {
-  //const [developers, setDevelopers] = useState([]);
-  const count = useState(2);
-  var pageParam = 1;
-
-  const fetchPostList = async () => {
+  const fetchPostList = async (pageParam) => {
     const res = await axios.get(`/api/developer/total?page=${pageParam}`);
-    //const { posts } = developers;
-    //const { isLast } = developers.length;
 
     return {
       developers_data: res.data.DeveloperList,
       current_page: pageParam,
-      nextPage: ++pageParam,
+      nextPage: pageParam + 1,
+      isLast: res.data.isLast,
     };
-
-    //const { DeveloperList, isLast } = res.data;
-
-    //return { DeveloperList, nextPage: pageParam + 1, isLast };
   };
 
   const { ref, inView } = useInView();
   const { data, status, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
     "developers_data",
-    () => fetchPostList(pageParam),
+    ({ pageParam = 1 }) => fetchPostList(pageParam),
     {
-      getNextPageParam: (lastPage, allPages) => {
-        const nextPage = lastPage + 1;
-        console.log(nextPage);
-
-        return nextPage;
-        //pageParam <= count ?
-        // pageParam <= count ? lastPage.nextPage : undefined,
-      },
+      getNextPageParam: (lastPage) =>
+        !lastPage.isLast ? lastPage.nextPage : undefined,
     }
   );
 
@@ -53,12 +38,10 @@ const DevelopersScroll = () => {
     return (
       <>
         {page?.developers_data?.map((dev, idx) => {
-          //console.log(dev, idx);
           return <DeveloperCard key={idx} data={dev} />;
         })}
       </>
     );
-    //return <DeveloperCard key={idx} data={developer} />;
   });
 
   return (
