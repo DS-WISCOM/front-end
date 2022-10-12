@@ -8,9 +8,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <section className="wrapper">
-          <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div>
           <App />
       </section>
   </React.StrictMode>
