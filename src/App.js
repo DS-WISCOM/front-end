@@ -7,11 +7,13 @@ import DevelopersPage from "./pages/DevelopersPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import DevelopersDetailPage from "./pages/DevelopersDetailPage";
 import ProjectsDetailPage from "./pages/ProjectsDetailPage";
+import ScrollToTop from "./component/ScrollToTop";
 
 function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route path="/" element={<LandingPage />} />

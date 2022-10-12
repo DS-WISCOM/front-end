@@ -3,15 +3,19 @@ import styles from "../css/DevelopersPage.module.css";
 import axios from "axios";
 import DeveloperCard from "../component/DeveloperCard";
 import ProjectCard from "../component/ProjectCard";
+import Spinner from "../component/Spinner";
 
 function ProjectsPage() {
   const [projects, setProjects] = useState([]);
+  const [spinner, setSpinner] = useState(null);
 
   useEffect(() => {
+    setSpinner(true);
     axios.get(`/api/project/total`).then((response) => {
       if (response.data.success) {
         setProjects(response.data.ProjectList);
         // console.log(response.data.ProjectList);
+        setSpinner(false);
       }
     });
   }, []);
@@ -25,9 +29,13 @@ function ProjectsPage() {
   return (
     <div id={styles.projectsPage}>
       <div id={styles.projectsPageTitle}>PROJECTS</div>
-      <div id={styles.list}>
-        {projectList}
-      </div>
+      {spinner ? (
+        <Spinner />
+      ) : ( 
+        <div id={styles.list}>
+          {projectList}
+        </div>
+      )}
     </div>
   );
 }

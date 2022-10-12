@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from "react";
-import Devtest from "../component/Devtest";
 import styles from "../css/DevelopersPage.module.css";
 import DeveloperCard from "../component/DeveloperCard";
 import axios from "axios";
+import Spinner from "../component/Spinner";
 
 function DevelopersPage() {
   const [developers, setDevelopers] = useState([]);
+  const [spinner, setSpinner] = useState(null);
 
   useEffect(() => {
+    setSpinner(true);
     axios.get(`/api/developer/total`).then((response) => {
       if (response.data.success) {
         setDevelopers(response.data.DeveloperList);
         // console.log(response.data.DeveloperList);
+        setSpinner(false);
       }
     });
   }, []);
@@ -25,9 +28,12 @@ function DevelopersPage() {
   return (
     <div id={styles.developersPage}>
       <div id={styles.developersPageTitle}>DEVELOPERS</div>
+      {spinner ? (
+        <Spinner />
+      ) : ( 
       <div id={styles.list}>
         {developerList}
-      </div>
+      </div> )}
     </div>
   );
 }

@@ -2,19 +2,23 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "../css/DevelopersdetailPage.module.css";
 import { useLocation } from "react-router-dom";
+import Spinner from "../component/Spinner";
 
 const DevelopersDetailPage = (props) => {
   const location = useLocation();
   const developerId = location.state.data;
   const [developer, setDeveloper] = useState([]);
+  const [spinner, setSpinner] = useState(null);
 
   useEffect(() => {
+    setSpinner(true);
     // console.log(developerId);
     if(developerId) {
       axios.get(`/api/developer/${developerId}`).then((response) => {
         if(response.data.success) {
           setDeveloper(response.data.developer[0]);
           // console.log(response.data.developer[0]);
+          setSpinner(false);
         }
       })
     }
@@ -22,6 +26,9 @@ const DevelopersDetailPage = (props) => {
 
   return (
     <>
+    {spinner ? (
+        <Spinner />
+      ) : ( 
       <div id={styles.pageContainer}>
         <div id={styles.imageContainer}>
           <img id={styles.developerImage} src={developer.img} alt={`${developer.name_kr} 개발자 프로필 사진`} />
@@ -47,6 +54,7 @@ const DevelopersDetailPage = (props) => {
           }
         </div>
       </div>
+      )}
     </>
   );
 };

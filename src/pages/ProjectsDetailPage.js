@@ -7,19 +7,23 @@ import arrowLeft from '../images/arrowLeft.png'
 import arrowRight from '../images/arrowRight.png'
 import {useLocation} from "react-router-dom";
 import axios from "axios";
+import Spinner from "../component/Spinner";
 
 function ProjectsDetailPage() {
   const location = useLocation();
   const projectId = location.state.data; // 프로젝트 id
   const [project, setProject] = useState([]);
-  const [likeNum, setLikeNum] = useState(0)
+  const [likeNum, setLikeNum] = useState(0);
+  const [spinner, setSpinner] = useState(null);
 
   useEffect(() => {
+    setSpinner(true);
     // console.log(projectId)
     if(projectId) {
       axios.get(`/api/project/${projectId}`).then((response) => {
         setProject(response.data.projects);
         // console.log(response.data.projects);
+        setSpinner(false);
       })
     }
   }, []);
@@ -29,6 +33,10 @@ function ProjectsDetailPage() {
   }
 
   return (
+    <>
+    {spinner ? (
+      <Spinner />
+    ) : ( <>
     <div id={styles.projectsdetail}>
       <div id={styles.projectTitle}>{project.name}</div>
       <div id={styles.teamName}>{project.team_name}</div>
@@ -88,6 +96,8 @@ function ProjectsDetailPage() {
         </button>
       </div>
     </div>
+    </> )}
+    </>
   )
 }
 
