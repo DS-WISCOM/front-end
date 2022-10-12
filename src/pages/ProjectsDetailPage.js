@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import YoutubeEmbed from '../youtube/YoutubeEmbed.js'
-import styles from "../css/ProjectsDetailPage.module.css"
-import like from "../images/like.png"
+import React, {useState, useEffect} from 'react';
+import YoutubeEmbed from '../youtube/YoutubeEmbed.js';
+import styles from "../css/ProjectsDetailPage.module.css";
+import like from "../images/like.png";
 import {useLocation} from "react-router-dom";
 import axios from "axios";
 import Pagination from "react-js-pagination";
