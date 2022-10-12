@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import YoutubeEmbed from '../youtube/YoutubeEmbed.js'
-import styles from "../css/ProjectsDetailPage.module.css"
-import like from "../images/like.png"
+import React, {useState, useEffect} from 'react';
+import YoutubeEmbed from '../youtube/YoutubeEmbed.js';
+import styles from "../css/ProjectsDetailPage.module.css";
+import like from "../images/like.png";
 import {useLocation} from "react-router-dom";
 import axios from "axios";
 import Pagination from "react-js-pagination";
@@ -26,7 +26,6 @@ function ProjectsDetailPage() {
         setComment(response.data.comments);
         setDeveloper(response.data.devsInfo);
         setLikeNum(response.data.projects.likes);
-        console.log(developer)
       })
       axios.post(`/api/project/${projectId}/addLike`).then((response) => {
         setOnceLike(response.data.alreadyLiked);
@@ -42,10 +41,8 @@ function ProjectsDetailPage() {
       else {
         axios.post(`/api/project/${projectId}/addLike`).then((response) => {
           setOnceLike(response.data.alreadyLiked);
-          // console.log(onceLike);
           axios.get(`/api/project/${projectId}`).then((response) => {
             setLikeNum(response.data.projects.likes);
-            // console.log(response.data);
           })
         })
       }
@@ -74,7 +71,6 @@ function ProjectsDetailPage() {
 
   const handleNameChange = event => {
     setName(event.target.value);
-    // console.log(event.target.value);
   }
 
   const handleCommentChange = event => {
@@ -110,10 +106,10 @@ function ProjectsDetailPage() {
       {/* Developer */}
       <div id={styles.projectDeveloper}>Developer</div>
       <div id={styles.rowName}>
-        {developer.length === 0 ? <div /> :
+        {developer[0] === null ? <div /> :
         developer && developer?.map((developer, idx) => {
           return (
-          <div className={styles.developerName} key={idx}>{developer.name_kr}</div>
+            <div className={styles.developerName} key={idx}>{developer.name_kr}</div>
           )
         })}
       </div>
@@ -140,7 +136,7 @@ function ProjectsDetailPage() {
       comment && comment.map((comment, idx) => {
         const date = comment.createdAt.split('T')
         return (
-          <div id={styles.comments}>
+          <div id={styles.comments} key={idx}>
             <div id={styles.nameAndDate}>
               <div id={styles.commentDetailName}>{comment.writer}</div>
               <div id={styles.commentDetailDate}>{date[0]}</div>
@@ -149,19 +145,17 @@ function ProjectsDetailPage() {
           </div>
         )
       })}
-    {/* <div id={styles.page}> */}
-    <div className={styles.commentPagination}>
-      <Pagination
-          activePage={page}
-          itemsCountPerPage={3}
-          totalItemsCount={project.comments && project.comments.length}
-          pageRangeDisplayed={5}
-          prevPageText={"‹"}
-          nextPageText={"›"}
-          onChange={handlePageChange}
-        />
-    </div>
-    {/* </div> */}
+      <div className={styles.commentPagination}>
+        <Pagination
+            activePage={page}
+            itemsCountPerPage={3}
+            totalItemsCount={project.comments && project.comments.length}
+            pageRangeDisplayed={5}
+            prevPageText={"‹"}
+            nextPageText={"›"}
+            onChange={handlePageChange}
+          />
+      </div>
     </div>
   )
 }
