@@ -32,8 +32,8 @@ const DevelopersScroll = () => {
     if (inView) fetchNextPage();
   }, [inView]);
 
-  if (status === "loading") return <div>Loading data...</div>;
-  if (status === "error") return <div>Error fetching data</div>;
+  if (status === "loading") return <Spinner />;
+  if (status === "error") return <Spinner />;
 
   const developerList = data?.pages.map((page) => {
     return (
