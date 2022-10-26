@@ -17,6 +17,7 @@
     gap: 80px;
     place-items: center;
     justify-content: center;
+    align-items: baseline;
 }
 
 @media all and (max-width: 1000px) {
