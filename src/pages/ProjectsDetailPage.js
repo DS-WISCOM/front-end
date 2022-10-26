@@ -31,9 +31,11 @@ function ProjectsDetailPage() {
         setComment(response.data.comments);
         setDeveloper(response.data.devsInfo);
         setLikeNum(response.data.projects.likes);
+        
       })
-      axios.post(`/api/project/${projectId}/addLike`).then((response) => {
+      axios.get(`/api/project/${projectId}/alreadyLiked`).then((response) => {
         setOnceLike(response.data.alreadyLiked);
+        console.log(onceLike)
       })
     }
   }, []);
@@ -45,7 +47,7 @@ function ProjectsDetailPage() {
       }
       else {
         axios.post(`/api/project/${projectId}/addLike`).then((response) => {
-          setOnceLike(response.data.alreadyLiked);
+          setOnceLike(true);
           axios.get(`/api/project/${projectId}`).then((response) => {
             setLikeNum(response.data.projects.likes);
           })
@@ -104,10 +106,10 @@ function ProjectsDetailPage() {
       <div id={styles.line} />
       {/* youtube 영상 */}
       <div id={styles.projectVideo}>
-        <YoutubeEmbed embedId={project.video} />
+        {project.video === undefined || project.video === "" ? <div /> : <YoutubeEmbed embedId={project.video} />}
         {project.ppt && project?.ppt.map((ppt, idx) => {
           return (
-            <div><img id={styles.projectImg} alt='ppt' key={idx} src={ppt} /></div>
+            <div key={idx}><img id={styles.projectImg} alt='ppt' src={ppt} /></div>
           )
         })}
       </div>
@@ -155,7 +157,8 @@ function ProjectsDetailPage() {
         )
       })}
       <div className={styles.commentPagination}>
-        <Pagination
+        {comment.length < 1 ? <div /> :
+          <Pagination
             activePage={page}
             itemsCountPerPage={3}
             totalItemsCount={project.comments && project.comments.length}
@@ -164,6 +167,7 @@ function ProjectsDetailPage() {
             nextPageText={"›"}
             onChange={handlePageChange}
           />
+        }
       </div>
     </div>
     </> )}
