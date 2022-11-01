@@ -31,7 +31,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://ds-wiscom.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",

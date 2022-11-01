@@ -43,6 +43,7 @@ function Navbar() {
             WISCOM
           </NavLink>
         </div>
+
         <div id={styles.toggle} onClick={handleMenu}>
           <img id={styles.toggleImage} src={menuClosed} alt="메뉴" />
         </div>
