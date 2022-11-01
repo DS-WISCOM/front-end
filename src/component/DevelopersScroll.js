@@ -35,13 +35,13 @@ const DevelopersScroll = () => {
   if (status === "loading") return <Spinner />;
   if (status === "error") return <Spinner />;
 
-  const developerList = data?.pages.map((page) => {
+  const developerList = data?.pages.map((page, index) => {
     return (
-      <>
+      <React.Fragment key={index}>
         {page?.developers_data?.map((dev, idx) => {
           return <DeveloperCard key={idx} data={dev} />;
         })}
-      </>
+      </React.Fragment>
     );
   });
 
