@@ -46,15 +46,15 @@ const DevelopersDetailPage = (props) => {
             <div id={styles.impression}>{developer.impression}</div>
           </div>
           {developer.project_id && (
-            <Link to={'/projects/detail'} state={{ data: developer.project_id && developer.project_id._id }} id={styles.projectLink}>
               <div id={styles.projectContainer}>
                 <div id={styles.projectLeftContainer}>
                   <div id={styles.project}>Project</div>
                   <div id={styles.projectName}>{developer.project_id.name}</div>
                 </div>
-                <img id={styles.projectImage} src={developer.project_id.img} alt="프로젝트 사진" />
+                <Link to={'/projects/detail'} state={{ data: developer.project_id && developer.project_id._id }} id={styles.projectLink}>
+                  <img id={styles.projectImage} src={developer.project_id.img} alt="프로젝트 사진" />
+                </Link>
               </div>
-            </Link>
           )}
         </div>
       </div>
