@@ -117,7 +117,7 @@ function ProjectsDetailPage() {
       {/* Developer */}
       <div id={styles.projectDeveloper}>Developer</div>
       <div id={styles.rowName}>
-        {developer[0] === null ? <div /> :
+        {developer === null ? <div /> :
         developer && developer?.map((developer, idx) => {
           return (
             <div className={styles.developerName} key={idx}>{developer.name_kr}</div>
