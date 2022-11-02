@@ -76,7 +76,11 @@ function LandingPage() {
   }, []);
 
   const developerList = developers.map((developer, idx) => {
-    return <div className={styles.person} key={idx}>{developer}</div>;
+    return (
+      <div className={styles.person} key={idx}>
+        {developer}
+      </div>
+    );
   });
 
   return (
@@ -100,11 +104,14 @@ function LandingPage() {
         style={{ marginTop: "200px" }}
       >
         <div id={styles.posterText}>
-          <p>WISCOM 관련 TEXT 들어갈 예정</p>
+          <p>
+            WISCOM에 오신 여러분 환영합니다. n년의 전통을 자랑하는 컴퓨터공학의
+            구성원 하나하나가 모여 내비치는 다양한 빛을 감상하세요.
+          </p>
         </div>
         <div id={styles.poster}>
           <img
-            src={require("../images/dummy-poster.png")}
+            src={require("../images/main-poster.jpg")}
             width={newFunction()}
             height={"600px"}
           />
@@ -125,6 +132,19 @@ function LandingPage() {
           </section>
         </div>
         <div className={styles.contentRow}>
+          <div className={styles.text}>개발자</div>
+          <div
+            className={styles.nameList}
+            style={{ display: "flex", flexDirection: "column" }}
+          >
+            <div className={styles.developerList}>
+              {developerList}
+              {developerList}
+              {developerList}
+            </div>
+          </div>
+        </div>
+        <div className={styles.contentRow} style={{ marginBottom: "200px" }}>
           <div className={styles.text}>졸업전시준비위원회</div>
           <div
             className={styles.nameList}
@@ -148,19 +168,6 @@ function LandingPage() {
               <div className={styles.person}>황성민</div>
               <div className={styles.person}>김가빈</div>
               <div className={styles.person}>김지민</div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.contentRow} style={{ marginBottom: "200px" }}>
-          <div className={styles.text}>개발자</div>
-          <div
-            className={styles.nameList}
-            style={{ display: "flex", flexDirection: "column" }}
-          >
-            <div className={styles.developerList}>
-              {developerList}
-              {developerList}
-              {developerList}
             </div>
           </div>
         </div>
