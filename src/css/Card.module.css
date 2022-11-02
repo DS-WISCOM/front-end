@@ -1,11 +1,11 @@
-.devList{
+.devList {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.devCard{
+.devCard {
   margin: 30px;
   align-items: center;
   text-align: center;
@@ -16,7 +16,7 @@
   text-decoration: none;
 }
 
-.image{
+.image {
   width: 250px;
   height: 250px;
   margin-bottom: 20px;

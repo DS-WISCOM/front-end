@@ -35,14 +35,15 @@
 
 #posterText {
   float: left;
-  text-align: center;
+  text-align: left;
   width: 50%;
 }
 
 #posterText p {
   position: relative;
-  /*left: 50%;*/
   margin: 0 auto;
+  margin-left: 48px;
+  line-height: 36px;
 }
 
 #poster {
@@ -68,7 +69,8 @@
   font-weight: 700;
   font-size: 32px;
   margin: 0 100px;
-  word-break: normal;
+  word-break: keep-all;
+  text-align: center;
 }
 
 .contentRow {
@@ -141,6 +143,7 @@
 }
 
 #stars {
+  z-index: -100;
   width: 1px;
   height: 1px;
   background: transparent;
@@ -511,6 +514,7 @@
 }
 
 #stars2 {
+  z-index: -100;
   width: 2px;
   height: 2px;
   background: transparent;
@@ -629,6 +633,7 @@
 }
 
 #stars3 {
+  z-index: -100;
   width: 3px;
   height: 3px;
   background: transparent;
