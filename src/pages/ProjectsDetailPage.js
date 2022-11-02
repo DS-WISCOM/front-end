@@ -22,11 +22,9 @@ function ProjectsDetailPage() {
 
   useEffect(() => {
     setSpinner(true);
-    // console.log(projectId)
     if(projectId) {
       axios.get(`/api/project/${projectId}`).then((response) => {
         setProject(response.data.projects);
-        // console.log(response.data.projects);
         setSpinner(false);
         setComment(response.data.comments);
         setDeveloper(response.data.devsInfo);
@@ -35,7 +33,6 @@ function ProjectsDetailPage() {
       })
       axios.get(`/api/project/${projectId}/alreadyLiked`).then((response) => {
         setOnceLike(response.data.alreadyLiked);
-        console.log(onceLike)
       })
     }
   }, []);
@@ -89,7 +86,6 @@ function ProjectsDetailPage() {
     const params = {page: [page]};
     axios.get(`/api/project/${projectId}`, {params}).then((response) => {
       setComment(response.data.comments);
-      console.log(response)
     })
   }
   
@@ -106,7 +102,7 @@ function ProjectsDetailPage() {
       <div id={styles.line} />
       {/* youtube 영상 */}
       <div id={styles.projectVideo}>
-        {project.video === undefined || project.video === "" ? <div /> : <YoutubeEmbed embedId={project.video} />}
+        {project.video === undefined || project.video === "" ? <div id={styles.nonVideo}/> : <YoutubeEmbed embedId={project.video} />}
         {project.ppt && project?.ppt.map((ppt, idx) => {
           return (
             <div key={idx}><img id={styles.projectImg} alt='ppt' src={ppt} /></div>
@@ -131,7 +127,8 @@ function ProjectsDetailPage() {
       </button>
       <div id={styles.likeNumber}>{likeNum}</div>
       {/* 댓글 작성 */}
-      <div id={styles.comment}>Comments ({project.comments && project.comments.length})</div>
+      {comment.length < 1 ? <div id={styles.comment}>Comments (0)</div>
+      : <div id={styles.comment}>Comments ({project.comments && project.comments.length})</div>}
       <div id={styles.row}>
         <div id={styles.write}>
           <div id={styles.writerName}>
