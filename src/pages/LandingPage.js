@@ -111,7 +111,9 @@ function LandingPage() {
         </div>
         <div id={styles.poster}>
           <img
-            src={require("../images/main-poster.jpg")}
+            src={
+              "https://wiscom.s3.ap-northeast-2.amazonaws.com/WISCOM_MAIN+POSTER.jpg"
+            }
             width={newFunction()}
             height={"600px"}
           />
