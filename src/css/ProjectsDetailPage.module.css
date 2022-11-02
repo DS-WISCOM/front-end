@@ -34,6 +34,7 @@
   margin-top: 3.5%;
   margin-bottom: 1%;
   width: 90%;
+  text-align: center;
 }
 
 #projectVideo {
@@ -43,7 +44,8 @@
 }
 
 #projectImg {
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+  max-width: 960px;
 }
 
 #projectDeveloper {
@@ -69,13 +71,17 @@
   width: 12vw;
 }
 
+#nonVideo {
+  margin: 5%;
+}
+
 #videoResponsive {
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
   margin-top: 6%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 }
 
 #likeBtn {
@@ -147,7 +153,6 @@
   border: 2px solid white;
   align-content: center;
   display: flex;
-  /* width: 80vw; */
 }
 
 #writerContentDetail {
@@ -310,8 +315,8 @@
   }
 
   #projectImg {
-    width: 480px;
-    height: 270px;
+    width: 640px;
+    height: 360px;
   }
 }
 
@@ -322,8 +327,8 @@
   }
 
   #projectImg {
-    width: 400px;
-    height: 225px;
+    width: 480px;
+    height: 270px;
   }
 
   #like {
@@ -355,8 +360,8 @@
   }
 
   #projectImg {
-    width: 320px;
-    height: 180px;
+    width: 400px;
+    height: 225px;
   }
 
   #projectTitle {
@@ -379,8 +384,8 @@
   }
 
   #projectImg {
-    width: 256px;
-    height: 144px;
+    width: 320px;
+    height: 180px;
   }
 
   #like {
