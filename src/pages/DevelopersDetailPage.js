@@ -1,20 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import styles from "../css/DevelopersdetailPage.module.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Spinner from "../component/Spinner";
 
 const DevelopersDetailPage = (props) => {
   const location = useLocation();
   const developerId = location.state.data;
   const [developer, setDeveloper] = useState([]);
+  const [spinner, setSpinner] = useState(null);
 
   useEffect(() => {
+    setSpinner(true);
     // console.log(developerId);
     if (developerId) {
       axios.get(`/api/developer/${developerId}`).then((response) => {
         if (response.data.success) {
           setDeveloper(response.data.developer[0]);
           // console.log(response.data.developer[0]);
+          setSpinner(false);
         }
       });
     }
@@ -22,6 +26,9 @@ const DevelopersDetailPage = (props) => {
 
   return (
     <>
+    {spinner ? (
+        <Spinner />
+      ) : ( 
       <div id={styles.pageContainer}>
         <div id={styles.imageContainer}>
           <img
@@ -39,16 +46,19 @@ const DevelopersDetailPage = (props) => {
             <div id={styles.impression}>{developer.impression}</div>
           </div>
           {developer.project_id && (
-            <div id={styles.projectContainer}>
-              <div id={styles.projectLeftContainer}>
-                <div id={styles.project}>Project</div>
-                <div id={styles.projectName}>{developer.project_id.name}</div>
+              <div id={styles.projectContainer}>
+                <div id={styles.projectLeftContainer}>
+                  <div id={styles.project}>Project</div>
+                  <div id={styles.projectName}>{developer.project_id.name}</div>
+                </div>
+                <Link to={'/projects/detail'} state={{ data: developer.project_id && developer.project_id._id }} id={styles.projectLink}>
+                  <img id={styles.projectImage} src={developer.project_id.img} alt="프로젝트 사진" />
+                </Link>
               </div>
-              <img id={styles.projectImage} src={developer.project_id.img} />
-            </div>
           )}
         </div>
       </div>
+      )}
     </>
   );
 };

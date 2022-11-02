@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../css/DevelopersPage.module.css";
 import DeveloperCard from "./DeveloperCard";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "react-query";
+import Spinner from "../component/Spinner";
 import axios from "axios";
 
 const DevelopersScroll = () => {
@@ -31,8 +32,8 @@ const DevelopersScroll = () => {
     if (inView) fetchNextPage();
   }, [inView]);
 
-  if (status === "loading") return <div>Loading data...</div>;
-  if (status === "error") return <div>Error fetching data</div>;
+  if (status === "loading") return <Spinner />;
+  if (status === "error") return <Spinner />;
 
   const developerList = data?.pages.map((page) => {
     return (
@@ -48,7 +49,7 @@ const DevelopersScroll = () => {
     <div id={styles.developersPage}>
       <div id={styles.developersPageTitle}>DEVELOPERS</div>
       <div id={styles.list}>{developerList}</div>
-      {isFetchingNextPage ? <div>Loading data...</div> : <div ref={ref}></div>}
+      {isFetchingNextPage ? <Spinner /> : <div ref={ref}></div>}
     </div>
   );
 };

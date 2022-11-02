@@ -62,9 +62,13 @@
         line-height: 2em;
     }
 
+    #projectLink {
+        text-decoration: none;
+        color: white;
+    }
+
     #projectContainer {
         float: left;
-        width: 90%;
         padding: 30px;
         margin-bottom: 50px;
     }
@@ -125,8 +129,8 @@
 
     #developerImage {
         background-color: gray;
-        width: 400px;
-        height: 400px;
+        min-width: 400px;
+        min-height: 400px;
     }
 
     #developerName {
@@ -151,10 +155,18 @@
         line-height: 2em;
     }
 
+    #projectLink {
+        text-decoration: none;
+        color: white;
+        margin: 60px;
+    }
+
     #projectContainer {
         text-align: center;
         padding: 30px;
         display: flex;
+        max-width: 55%;
+        margin: 0 auto;
         justify-content: space-evenly;
         flex-wrap: wrap;
     }
@@ -178,7 +190,6 @@
         background-color: gray;
         width: 400px;
         height: 400px;
-        margin: 60px;
     }
 }
   

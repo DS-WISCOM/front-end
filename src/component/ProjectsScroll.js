@@ -3,6 +3,7 @@ import styles from "../css/DevelopersPage.module.css";
 import ProjectCard from "./ProjectCard";
 import { useInView } from "react-intersection-observer";
 import { useInfiniteQuery } from "react-query";
+import Spinner from "../component/Spinner";
 import axios from "axios";
 
 const ProjectsScroll = () => {
@@ -31,8 +32,8 @@ const ProjectsScroll = () => {
     if (inView) fetchNextPage();
   }, [inView]);
 
-  if (status === "loading") return <div>Loading data...</div>;
-  if (status === "error") return <div>Error fetching data</div>;
+  if (status === "loading") return <Spinner />;
+  if (status === "error") return <Spinner />;
 
   const projectList = data?.pages.map((page) => {
     return (
@@ -48,7 +49,7 @@ const ProjectsScroll = () => {
     <div id={styles.projectsPage}>
       <div id={styles.projectsPageTitle}>PROJECTS</div>
       <div id={styles.list}>{projectList}</div>
-      {isFetchingNextPage ? <div>Loading data...</div> : <div ref={ref}></div>}
+      {isFetchingNextPage ? <Spinner /> : <div ref={ref}></div>}
     </div>
   );
 };

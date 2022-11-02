@@ -4,12 +4,14 @@ import styles from "../css/ProjectsDetailPage.module.css";
 import like from "../images/like.png";
 import {useLocation} from "react-router-dom";
 import axios from "axios";
+import Spinner from "../component/Spinner";
 import Pagination from "react-js-pagination";
 
 function ProjectsDetailPage() {
   const location = useLocation();
   const projectId = location.state.data; // 프로젝트 id
   const [project, setProject] = useState([]);
+  const [spinner, setSpinner] = useState(null);
   const [developer, setDeveloper] = useState([]);
   const [comment, setComment] = useState([]);
   const [name, setName] = useState('');
@@ -19,10 +21,13 @@ function ProjectsDetailPage() {
   const [onceLike, setOnceLike] = useState(false);
 
   useEffect(() => {
+    setSpinner(true);
     // console.log(projectId)
     if(projectId) {
       axios.get(`/api/project/${projectId}`).then((response) => {
         setProject(response.data.projects);
+        // console.log(response.data.projects);
+        setSpinner(false);
         setComment(response.data.comments);
         setDeveloper(response.data.devsInfo);
         setLikeNum(response.data.projects.likes);
@@ -89,7 +94,11 @@ function ProjectsDetailPage() {
   }
   
   return (
-    // 프로젝트 이름, 팀명, 설명
+    <>
+    {spinner ? (
+      <Spinner />
+    ) : ( <>
+    {/* 프로젝트 이름, 팀명, 설명 */}
     <div id={styles.projectsdetail}>
       <div id={styles.projectTitle}>{project.name}</div>
       <div id={styles.teamName}>{project.team_name}</div>
@@ -161,6 +170,8 @@ function ProjectsDetailPage() {
         }
       </div>
     </div>
+    </> )}
+    </>
   )
 }
 
