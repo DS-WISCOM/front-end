@@ -35,16 +35,16 @@ const ProjectsScroll = () => {
   if (status === "loading") return <Spinner />;
   if (status === "error") return <Spinner />;
 
-  const projectList = data?.pages.map((page) => {
+  const projectList = data?.pages.map((page, index) => {
     return (
-      <>
+      <React.Fragment key={index}>
         {page?.projects_data?.map((project, idx) => {
           return <ProjectCard key={idx} data={project} />;
         })}
-      </>
+      </React.Fragment>
     );
   });
-
+  
   return (
     <div id={styles.projectsPage}>
       <div id={styles.projectsPageTitle}>PROJECTS</div>
