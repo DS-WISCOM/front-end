@@ -164,6 +164,7 @@ function LandingPage() {
               <div className={styles.person}>권희원</div>
               <div className={styles.person}>김혜수</div>
               <div className={styles.person}>문서연</div>
+              <div className={styles.person}>유수연</div>
               <div className={styles.person}>유영주</div>
               <div className={styles.person}>임예진</div>
               <div className={styles.person}>홍수연</div>

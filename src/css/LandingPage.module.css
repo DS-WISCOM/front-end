@@ -104,6 +104,11 @@
 }
 
 @media all and (max-width: 1000px) {
+  .title {
+    text-align: center;
+    font-size: 24px;
+    margin: 100px auto 0;
+  }
   #poster img {
     margin-top: 100px;
   }
@@ -115,12 +120,13 @@
   #posterText {
     width: 100%;
   }
+
+  #posterText p {
+    margin: 0 20px;
+    text-align: center;
+  }
 }
 @media all and (max-width: 768px) {
-  #title {
-    text-align: center;
-    margin: 0 auto;
-  }
   #poster {
     float: none;
     margin: 0 auto;
