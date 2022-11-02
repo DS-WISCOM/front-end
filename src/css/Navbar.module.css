@@ -3,6 +3,27 @@
         font-size: 24px;
     }
 
+    #toggleImage{
+        width: 35px;
+        height: 35px;
+        margin-right: 28px;
+        margin-top: 24px;
+    }
+
+    #toggleExitImage{
+        width: 28px;
+        height: 30px;
+        margin-right: 30px;
+        margin-top: 30px;
+        margin-left: auto;
+    }
+
+    
+    #navbarLogo{
+        margin-left: 28px;
+        font-size: 32px;
+    }
+
     #footer {
         flex-direction: column;
         text-align: center;
@@ -17,6 +38,8 @@
 
     #footerContent {
         margin: auto;
+        padding-left: 10%;
+        padding-right: 10%;
     }
 }
 
@@ -24,10 +47,50 @@
     #menulist{
         font-size: 30px;
     }
+
+    #toggleImage{
+        width: 40px;
+        height: 40px;
+        margin-right: 38px;
+        margin-top: 24px;
+    }
+
+    #toggleExitImage{
+        width: 32px;
+        height: 35px;
+        margin-right: 40px;
+        margin-top: 30px;
+        margin-left: auto;
+    }
+
+    #navbarLogo{
+        margin-left: 38px;
+        font-size: 34px;
+    }
 }
 
 @media all and (min-width:1200px) {
     #menulist{
+        font-size: 36px;
+    }
+
+    #toggleImage{
+        width: 45px;
+        height: 45px;
+        margin-right: 48px;
+        margin-top: 24px;
+    }
+
+    #toggleExitImage{
+        width: 38px;
+        height: 40px;
+        margin-right: 50px;
+        margin-top: 30px;
+        margin-left: auto;
+    }
+
+    #navbarLogo{
+        margin-left: 48px;
         font-size: 36px;
     }
 
@@ -60,10 +123,7 @@
 
 #navbarLogo{
     font-family: "ButlerRegular";
-    font-size: 36px;
-    margin-left: 48px;
     margin-top: 24px;
-
 }
 
 #navberContent{
@@ -72,25 +132,11 @@
 
 #toggle{
     margin-left:auto;
-}
 
-#toggleImage{
-    width: 46px;
-    height: 33px;
-    margin-right: 53px;
-    margin-top: 30px;
 }
 
 #exitBtn{
     display: flex;
-}
-
-#toggleExitImage{
-    width: 38px;
-    height: 40px;
-    margin-right: 53px;
-    margin-top: 30px;
-    margin-left: auto;
 }
 
 #menulist{
@@ -100,6 +146,7 @@
     flex-direction: column;
     background-color: black;
     position: fixed;
+    z-index: 9999;
     top: 0;
     right: 0;
 }
