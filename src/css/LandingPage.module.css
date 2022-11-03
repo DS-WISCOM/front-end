@@ -111,11 +111,17 @@
   }
   #poster img {
     margin-top: 100px;
+    width: 80%;
+    height: 80%;
   }
   #poster,
   #posterText {
     float: none;
     margin: 0 auto;
+  }
+  #poster {
+    align-items: center;
+    display: flex;
   }
   #posterText {
     width: 100%;

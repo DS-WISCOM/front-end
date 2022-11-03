@@ -1,27 +1,29 @@
-#developersPage, #projectsPage{
-    margin: 0 100px;
+#developersPage,
+#projectsPage {
+  margin: 0 100px;
 }
 
-#developersPageTitle, #projectsPageTitle {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 48px;
-    font-family: "Pretenderd";
-    font-family: "PretendardVariable";
-    font-weight: bold;
+#developersPageTitle,
+#projectsPageTitle {
+  margin: 50px 0;
+  text-align: center;
+  font-size: 48px;
+  font-family: "Pretenderd";
+  font-family: "PretendardVariable";
+  font-weight: bold;
 }
 
 #list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-    gap: 80px;
-    place-items: center;
-    justify-content: center;
-    align-items: baseline;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  gap: 80px;
+  place-items: center;
+  justify-content: center;
+  align-items: baseline;
 }
 
 @media all and (max-width: 1000px) {
-    #list {
-        justify-content: center;
-    }
+  #list {
+    justify-content: center;
+  }
 }

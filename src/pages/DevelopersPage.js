@@ -6,12 +6,6 @@ import { QueryClient, QueryClientProvider } from "react-query";
 const queryClient = new QueryClient();
 
 function DevelopersPage() {
-  // $(() => {
-  //   setTimeout(() => {
-  //     window.scrollTo(0, 0);
-  //   }, 100);
-  // });
-
   return (
     <QueryClientProvider client={queryClient}>
       <div>
