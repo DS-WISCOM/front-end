@@ -4,9 +4,12 @@
 }
 
 .titleContainer {
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  justify-content: center;
   width: 100vw;
   transform: translateX(-101%);
+  align-items: center;
 }
 
 .active {
@@ -44,13 +47,16 @@
   margin: 0 auto;
   margin-left: 48px;
   line-height: 36px;
+  word-break: keep-all;
+  text-align: center;
 }
 
 #poster {
   float: right;
-  margin-right: 80px;
+  margin-right: 50px;
   width: 40%;
   min-width: 400px;
+  margin-left: 50px;
   /*margin-top: 95px;*/
 }
 
@@ -104,6 +110,9 @@
 }
 
 @media all and (max-width: 1000px) {
+  .titleContainer {
+    display: inline-block;
+  }
   .title {
     text-align: center;
     font-size: 24px;
