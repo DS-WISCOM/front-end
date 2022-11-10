@@ -12,7 +12,7 @@ const DeveloperCard = (props) => {
     >
       <img src={data.img} className={styles.image}></img>
       <div className={styles.mainText}>{data.name_kr}</div>
-      <div className={styles.subText}>{data.project_id.name}</div>
+      <div className={styles.subText}>{data.project_id?.name}</div>
     </Link>
   );
 };
