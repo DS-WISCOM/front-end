@@ -105,10 +105,6 @@
     }
 
     #contact {    
-<<<<<<< HEAD
-=======
-        
->>>>>>> 2a5d7974c5d6d67467e367a725a4cea77b61d0f6
         font-size: 24px;
         font-weight: bold;
     }
@@ -151,17 +147,11 @@
     }
 
     #impression {
-<<<<<<< HEAD
         margin: auto;
         max-width: 800px;
         text-align: center;
         font-size: 20px;
         margin: 80px auto;
-=======
-        text-align: left;
-        font-size: 14px;
-        margin: 80px 0;
->>>>>>> 2a5d7974c5d6d67467e367a725a4cea77b61d0f6
         line-height: 2em;
     }
 
@@ -192,7 +182,6 @@
 
     #projectName {
         font-size: 18px;
-<<<<<<< HEAD
         margin-top: 20px;
     }
 
@@ -293,8 +282,6 @@
 
     #projectName {
         font-size: 18px;
-=======
->>>>>>> 2a5d7974c5d6d67467e367a725a4cea77b61d0f6
         margin-top: 20px;
     }
 
