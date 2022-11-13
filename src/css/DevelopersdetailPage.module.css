@@ -106,14 +106,15 @@
 
     #contact {    
         
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
     }
 
     #email {
         display: inline-block;
-        font-size: 24px;
+        font-size: 16px;
         font-weight: middle;
+        margin-top: 10px;
     }
 
     #imageContainer {
@@ -133,7 +134,7 @@
 
     #developerName {
         display: inline-block;
-        font-size: 36px;
+        font-size: 24px;
         width: 100%;
         font-weight: bold;
         margin-top: 50px;
@@ -141,15 +142,15 @@
 
     #developerNameEng {
         display: inline-block;
-        font-size: 32px;
+        font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
     }
 
     #impression {
         text-align: left;
-        font-size: 24px;
-        margin: 160px 0;
+        font-size: 14px;
+        margin: 80px 0;
         line-height: 2em;
     }
 
@@ -174,12 +175,12 @@
     }
 
     #project {
-        font-size: 36px;
+        font-size: 24px;
         font-weight: bold;
     }
 
     #projectName {
-        font-size: 24px;
+        font-size: 18px;
         margin-top: 20px;
     }
 
