@@ -62,13 +62,10 @@ function LandingPage() {
   }, [scrollSectionEvent]);
 
   useEffect(() => {
-    axios.get(`/api/developer/total`).then((response) => {
+    axios.get(`/api/developer/totalName`).then((response) => {
       if (response.data.success) {
-        setDevelopers(
-          response.data.DeveloperList.map((developer) => {
-            return developer.name_kr;
-          })
-        );
+        console.log(response.data.nameList);
+        setDevelopers(response.data.nameList);
       } else {
         console.log("developer list not found");
       }
@@ -155,14 +152,10 @@ function LandingPage() {
             className={styles.nameList}
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <div className={styles.developerList}>
-              {developerList}
-              {developerList}
-              {developerList}
-            </div>
+            <div className={styles.developerList}>{developerList}</div>
           </div>
         </div>
-        <div className={styles.contentRow} style={{ marginBottom: "200px" }}>
+        <div className={styles.contentRow}>
           <div className={styles.text}>졸업전시준비위원회</div>
           <div
             className={styles.nameList}
