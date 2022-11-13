@@ -123,9 +123,7 @@ function LandingPage() {
         </div>
         <div id={styles.poster}>
           <img
-            src={
-              "https://wiscom.s3.ap-northeast-2.amazonaws.com/WISCOM_MAIN+POSTER.jpg"
-            }
+            src={"https://wiscom.s3.ap-northeast-2.amazonaws.com/poster.jpg"}
             width={"400px"}
             height={"600px"}
           />
