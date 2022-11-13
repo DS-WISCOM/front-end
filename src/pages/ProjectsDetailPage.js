@@ -14,6 +14,7 @@ function ProjectsDetailPage() {
   const [spinner, setSpinner] = useState(null);
   const [developer, setDeveloper] = useState([]);
   const [comment, setComment] = useState([]);
+  const [numComment, setNumComment] = useState(0);
   const [name, setName] = useState('');
   const [msg, setMsg] = useState('');
   const [page, setPage] = useState(1);
@@ -29,7 +30,7 @@ function ProjectsDetailPage() {
         setComment(response.data.comments);
         setDeveloper(response.data.devsInfo);
         setLikeNum(response.data.projects.likes);
-        
+        setNumComment(response.data.projects.comments.length);
       })
       axios.get(`/api/project/${projectId}/alreadyLiked`).then((response) => {
         setOnceLike(response.data.alreadyLiked);
@@ -57,6 +58,9 @@ function ProjectsDetailPage() {
     if (name === '' || msg === '') {
       alert('이름 혹은 내용을 정확히 입력해주세요.')
     }
+    else if (numComment > 200) {
+      alert('최대 댓글 수를 초과하여 지금은 댓글을 달 수 없습니다.')
+    }
     else {
       if(projectId) {
         await axios.post(`/api/project/${projectId}/addComment`, {
@@ -67,6 +71,7 @@ function ProjectsDetailPage() {
           setComment(response.data.comments)
           setName('');
           setMsg('');
+          setNumComment(response.data.projects.comments && response.data.projects.comments.length);
         }
         )
       }
@@ -128,7 +133,7 @@ function ProjectsDetailPage() {
       <div id={styles.likeNumber}>{likeNum}</div>
       {/* 댓글 작성 */}
       {comment.length < 1 ? <div id={styles.comment}>Comments (0)</div>
-      : <div id={styles.comment}>Comments ({project.comments && project.comments.length})</div>}
+      : <div id={styles.comment}>Comments ({numComment})</div>}
       <div id={styles.row}>
         <div id={styles.write}>
           <div id={styles.writerName}>
@@ -154,7 +159,7 @@ function ProjectsDetailPage() {
         )
       })}
       <div className={styles.commentPagination}>
-        {comment.length < 1 ? <div /> :
+        {comment.length < 1 || comment === undefined? <div /> :
           <Pagination
             activePage={page}
             itemsCountPerPage={3}

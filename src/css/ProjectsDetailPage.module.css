@@ -19,6 +19,8 @@
   color: #FFFFFF;
   font-weight: bold;
   font-size: 48px;
+  margin-bottom: 0.5%;
+  text-align: center;
 }
 
 #teamName {
@@ -29,12 +31,12 @@
 
 #projectContent {
   color: #FFFFFF;
-  font-weight: bold;
   font-size: 20px;
   margin-top: 3.5%;
   margin-bottom: 1%;
   width: 90%;
   text-align: center;
+  line-height: 135%;
 }
 
 #projectVideo {
@@ -62,8 +64,7 @@
 }
 
 .developerName {
-  font-weight: bold;
-  font-size: 26px;
+  font-size: 24px;
   margin-top: 3%;
   margin-left: 2%;
   margin-right: 2%;
@@ -347,8 +348,12 @@
     font-size: 26px;
   }
 
-  .developerName, #comment, #likeNumber {
+  #comment, #likeNumber {
     font-size: 24px;
+  }
+
+  .developerName, .commentPagination ul li a {
+    font-size: 22px;
   }
 
   #projectContent, #writerNameDetail, #writerContentDetail, #sendBtn, #commentDetailName, #commentDetailDate, #commentDetailContent, .number {
@@ -400,8 +405,12 @@
     font-size: 24px;
   }
 
-  #teamName, .developerName, #comment, #likeNumber {
+  #teamName, #comment, #likeNumber, .commentPagination ul li a {
     font-size: 16px;
+  }
+
+  .developerName {
+    font-size: 14px;
   }
 
   #projectContent {
