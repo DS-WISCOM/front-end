@@ -54,7 +54,6 @@
 #poster {
   float: right;
   margin-right: 50px;
-  width: 40%;
   min-width: 400px;
   margin-left: 50px;
   display: flex;
@@ -121,13 +120,14 @@
   }
   #poster img {
     margin-top: 100px;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
   }
   #poster,
   #posterText {
     float: none;
     margin: 0 auto;
+    width: 100vw;
   }
   #poster {
     align-items: center;
@@ -156,6 +156,7 @@
 
   .contentRow {
     margin-left: 0;
+    margin-bottom: 20px;
   }
   .developerList {
     width: 400px;
