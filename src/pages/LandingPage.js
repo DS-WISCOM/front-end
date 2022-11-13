@@ -126,7 +126,7 @@ function LandingPage() {
             src={
               "https://wiscom.s3.ap-northeast-2.amazonaws.com/WISCOM_MAIN+POSTER.jpg"
             }
-            width={newFunction()}
+            width={"400px"}
             height={"600px"}
           />
         </div>
@@ -188,6 +188,3 @@ function LandingPage() {
 }
 
 export default LandingPage;
-function newFunction() {
-  return "400px";
-}
