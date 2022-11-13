@@ -64,7 +64,6 @@ function LandingPage() {
   useEffect(() => {
     axios.get(`/api/developer/totalName`).then((response) => {
       if (response.data.success) {
-        console.log(response.data.nameList);
         setDevelopers(response.data.nameList);
       } else {
         console.log("developer list not found");

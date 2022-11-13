@@ -12,7 +12,12 @@ body {
   background-color: #000000;
   background-repeat: repeat;
   background-size: cover;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: "PretendardVariable";
 }
 
+@media all and (max-width: 768px) {
+  body {
+    width: 100vw;
+  }
+}
