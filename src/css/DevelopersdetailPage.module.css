@@ -217,8 +217,13 @@
     }
 
     #imageContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
         text-align: center;
         padding: 30px;
+        max-width: 400px;
     }
 
     #developerContainer {
@@ -232,7 +237,6 @@
     }
 
     #developerName {
-        display: inline-block;
         font-size: 24px;
         width: 100%;
         font-weight: bold;
@@ -240,7 +244,6 @@
     }
 
     #developerNameEng {
-        display: inline-block;
         font-size: 20px;
         font-weight: bold;
         margin-top: 10px;
